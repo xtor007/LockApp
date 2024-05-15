@@ -10,6 +10,21 @@
 		FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD6D2BF51FD5005AE399 /* FlowExecutor.swift */; };
 		FF3BCD702BF52004005AE399 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD6F2BF52004005AE399 /* Flow.swift */; };
 		FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD712BF52131005AE399 /* FlowFactory.swift */; };
+		FF3BCD752BF52415005AE399 /* CustomizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD742BF52415005AE399 /* CustomizedTextField.swift */; };
+		FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD772BF527C2005AE399 /* CustomizedButton.swift */; };
+		FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD7A2BF5298B005AE399 /* ActivityIndicator.swift */; };
+		FF3BCD802BF52E07005AE399 /* EnterServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD7F2BF52E07005AE399 /* EnterServerView.swift */; };
+		FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD822BF52EBC005AE399 /* EnterServerViewModel.swift */; };
+		FF3BCD872BF53274005AE399 /* SwiftUIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD862BF53274005AE399 /* SwiftUIAlert.swift */; };
+		FF3BCD892BF53301005AE399 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD882BF53301005AE399 /* Texts.swift */; };
+		FF3BCD8C2BF5349A005AE399 /* StandartBackgroundWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD8B2BF5349A005AE399 /* StandartBackgroundWrapper.swift */; };
+		FF3BCD8F2BF53965005AE399 /* CloseKeyboardWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD8E2BF53965005AE399 /* CloseKeyboardWrapper.swift */; };
+		FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD902BF53D63005AE399 /* UserDefaultsValues.swift */; };
+		FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD942BF53EA3005AE399 /* NotificationNames.swift */; };
+		FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD972BF540E0005AE399 /* NetworkManager.swift */; };
+		FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD992BF5410E005AE399 /* ValidServerResponse.swift */; };
+		FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD9B2BF54142005AE399 /* RequestMaker.swift */; };
+		FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCD9D2BF5427F005AE399 /* ServerEndpoints.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -20,6 +35,21 @@
 		FF3BCD6D2BF51FD5005AE399 /* FlowExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowExecutor.swift; sourceTree = "<group>"; };
 		FF3BCD6F2BF52004005AE399 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		FF3BCD712BF52131005AE399 /* FlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowFactory.swift; sourceTree = "<group>"; };
+		FF3BCD742BF52415005AE399 /* CustomizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
+		FF3BCD772BF527C2005AE399 /* CustomizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedButton.swift; sourceTree = "<group>"; };
+		FF3BCD7A2BF5298B005AE399 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		FF3BCD7F2BF52E07005AE399 /* EnterServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterServerView.swift; sourceTree = "<group>"; };
+		FF3BCD822BF52EBC005AE399 /* EnterServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterServerViewModel.swift; sourceTree = "<group>"; };
+		FF3BCD862BF53274005AE399 /* SwiftUIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAlert.swift; sourceTree = "<group>"; };
+		FF3BCD882BF53301005AE399 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
+		FF3BCD8B2BF5349A005AE399 /* StandartBackgroundWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartBackgroundWrapper.swift; sourceTree = "<group>"; };
+		FF3BCD8E2BF53965005AE399 /* CloseKeyboardWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseKeyboardWrapper.swift; sourceTree = "<group>"; };
+		FF3BCD902BF53D63005AE399 /* UserDefaultsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValues.swift; sourceTree = "<group>"; };
+		FF3BCD942BF53EA3005AE399 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		FF3BCD972BF540E0005AE399 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FF3BCD992BF5410E005AE399 /* ValidServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidServerResponse.swift; sourceTree = "<group>"; };
+		FF3BCD9B2BF54142005AE399 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
+		FF3BCD9D2BF5427F005AE399 /* ServerEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpoints.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */,
+				FF3BCD882BF53301005AE399 /* Texts.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -61,6 +92,9 @@
 		FF3BCD662BF51F1C005AE399 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCD792BF52977005AE399 /* ActivityIndicator */,
+				FF3BCD762BF527B4005AE399 /* Button */,
+				FF3BCD732BF523E6005AE399 /* Field */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -68,6 +102,7 @@
 		FF3BCD672BF51F22005AE399 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCD992BF5410E005AE399 /* ValidServerResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,6 +120,9 @@
 		FF3BCD692BF51F37005AE399 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCD962BF540D2005AE399 /* Network */,
+				FF3BCD932BF53E8F005AE399 /* Notification */,
+				FF3BCD922BF53E84005AE399 /* UserDefaults */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -92,6 +130,7 @@
 		FF3BCD6A2BF51F6C005AE399 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCD7C2BF52D5F005AE399 /* Preparation */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +152,123 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
+		FF3BCD732BF523E6005AE399 /* Field */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD742BF52415005AE399 /* CustomizedTextField.swift */,
+			);
+			path = Field;
+			sourceTree = "<group>";
+		};
+		FF3BCD762BF527B4005AE399 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD772BF527C2005AE399 /* CustomizedButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		FF3BCD792BF52977005AE399 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD7A2BF5298B005AE399 /* ActivityIndicator.swift */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		FF3BCD7C2BF52D5F005AE399 /* Preparation */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD7D2BF52D84005AE399 /* EnterServer */,
+			);
+			path = Preparation;
+			sourceTree = "<group>";
+		};
+		FF3BCD7D2BF52D84005AE399 /* EnterServer */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD812BF52EA7005AE399 /* ViewModel */,
+				FF3BCD7E2BF52DA6005AE399 /* View */,
+			);
+			path = EnterServer;
+			sourceTree = "<group>";
+		};
+		FF3BCD7E2BF52DA6005AE399 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD7F2BF52E07005AE399 /* EnterServerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF3BCD812BF52EA7005AE399 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD822BF52EBC005AE399 /* EnterServerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF3BCD842BF5325C005AE399 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD8D2BF5394B005AE399 /* CloseKeyboard */,
+				FF3BCD8A2BF53484005AE399 /* StandartBackground */,
+				FF3BCD852BF53267005AE399 /* Alert */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		FF3BCD852BF53267005AE399 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD862BF53274005AE399 /* SwiftUIAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FF3BCD8A2BF53484005AE399 /* StandartBackground */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD8B2BF5349A005AE399 /* StandartBackgroundWrapper.swift */,
+			);
+			path = StandartBackground;
+			sourceTree = "<group>";
+		};
+		FF3BCD8D2BF5394B005AE399 /* CloseKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD8E2BF53965005AE399 /* CloseKeyboardWrapper.swift */,
+			);
+			path = CloseKeyboard;
+			sourceTree = "<group>";
+		};
+		FF3BCD922BF53E84005AE399 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD902BF53D63005AE399 /* UserDefaultsValues.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		FF3BCD932BF53E8F005AE399 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD942BF53EA3005AE399 /* NotificationNames.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		FF3BCD962BF540D2005AE399 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCD972BF540E0005AE399 /* NetworkManager.swift */,
+				FF3BCD9B2BF54142005AE399 /* RequestMaker.swift */,
+				FF3BCD9D2BF5427F005AE399 /* ServerEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FFDF33B92BF3A5FB0070688B = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +288,7 @@
 		FFDF33C42BF3A5FB0070688B /* LockApp */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCD842BF5325C005AE399 /* Extention */,
 				FF3BCD692BF51F37005AE399 /* Managers */,
 				FF3BCD682BF51F28005AE399 /* Flow */,
 				FF3BCD672BF51F22005AE399 /* Model */,
@@ -212,10 +369,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3BCD872BF53274005AE399 /* SwiftUIAlert.swift in Sources */,
 				FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */,
+				FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */,
 				FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */,
 				FF3BCD702BF52004005AE399 /* Flow.swift in Sources */,
+				FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */,
+				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
+				FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */,
+				FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */,
+				FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */,
+				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
+				FF3BCD8C2BF5349A005AE399 /* StandartBackgroundWrapper.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
+				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,
+				FF3BCD752BF52415005AE399 /* CustomizedTextField.swift in Sources */,
+				FF3BCD802BF52E07005AE399 /* EnterServerView.swift in Sources */,
+				FF3BCD8F2BF53965005AE399 /* CloseKeyboardWrapper.swift in Sources */,
+				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
+				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
