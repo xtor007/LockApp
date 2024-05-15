@@ -20,6 +20,10 @@ class RequestMaker {
         request?.httpMethod = "GET"
     }
     
+    func addAuthorization(token: String) {
+        request?.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    }
+    
     func getRequest() throws -> URLRequest {
         guard let request = request else { throw RequestMakerError.noRequest }
         return request

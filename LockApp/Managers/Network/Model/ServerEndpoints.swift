@@ -9,4 +9,6 @@ import Foundation
 
 enum ServerEndpoint: String {
     case validate = "/validate"
+    
+    case refreshToken = "/auth/refresh"
 }

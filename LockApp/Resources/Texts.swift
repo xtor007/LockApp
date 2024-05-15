@@ -22,4 +22,7 @@ enum Texts {
     enum EnterServer: String {
         case enterServer = "Enter your company server, please"
     }
+    enum Loading: String {
+        case loadingMessage = "Please, wait a few seconds"
+    }
 }

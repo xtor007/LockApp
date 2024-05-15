@@ -12,4 +12,9 @@ class FlowFactory {
         let vc = UIHostingController(rootView: EnterServerView(viewModel: viewModel))
         return vc
     }
+    
+    func makeLoadingVC(_ viewModel: LoadingViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: LoadingView(viewModel: viewModel))
+        return vc
+    }
 }
