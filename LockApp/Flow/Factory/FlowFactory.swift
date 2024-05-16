@@ -20,6 +20,12 @@ class FlowFactory {
     
     func makeRegistrationVC(_ viewModel: RegistrationViewModel) -> UIViewController {
         let vc = UIHostingController(rootView: RegistrationView(viewModel: viewModel))
+        let navigation = UINavigationController(rootViewController: vc)
+        return navigation
+    }
+    
+    func makeChangePasswordVC(_ viewModel: ChangePasswordViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: ChangePasswordView(viewModel: viewModel))
         return vc
     }
 }

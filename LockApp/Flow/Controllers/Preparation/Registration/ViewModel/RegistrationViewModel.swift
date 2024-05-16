@@ -70,9 +70,8 @@ class RegistrationViewModel: ObservableObject {
 extension RegistrationViewModel {
     private func makeRequest() throws -> URLRequest {
         guard !email.isEmpty && !password.isEmpty else { throw RegistrationError.emptyFields }
-        guard let server = UserDefaults.serverLink else { throw RegistrationError.noServer }
         let maker = RequestMaker()
-        try maker.addURL(server, endpoint: .getToken)
+        try maker.addURL(UserDefaults.serverLink, endpoint: .getToken)
         maker.makeGet()
         try maker.addAuthorization(login: email, password: password)
         return try maker.getRequest()
@@ -85,5 +84,5 @@ extension RegistrationViewModel {
 }
 
 enum RegistrationError: Error {
-    case emptyFields, noServer
+    case emptyFields
 }

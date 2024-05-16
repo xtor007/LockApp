@@ -12,4 +12,6 @@ enum ServerEndpoint: String {
     
     case refreshToken = "/auth/refresh"
     case getToken = "/auth/getToken"
+    case sendEmail = "/auth/changePasswordEmail"
+    case changePassword = "/auth/changePassword"
 }

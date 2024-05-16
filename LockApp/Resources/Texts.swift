@@ -18,6 +18,9 @@ enum Texts {
         case connect = "Connect"
         case login = "Login"
         case forgotPassword = "Forgot Password"
+        case next = "Next"
+        case confirm = "Confirm"
+        case prev = "Prev"
     }
     
     // MARK: - Preparation
@@ -32,5 +35,8 @@ enum Texts {
         case password = "Your password"
         case passwordHelp = "If you have not changed your password, it is in your email."
         case changeServer = "Change server"
+        case code = "Enter code"
+        case newPassword = "New password"
+        case confirmPassword = "Confirm password"
     }
 }

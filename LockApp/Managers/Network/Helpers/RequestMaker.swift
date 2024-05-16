@@ -11,13 +11,21 @@ class RequestMaker {
     
     private var request: URLRequest?
     
-    func addURL(_ link: String, endpoint: ServerEndpoint? = nil) throws {
+    func addURL(_ link: String?, endpoint: ServerEndpoint? = nil) throws {
+        guard let link else { throw RequestMakerError.noServer }
         guard let url = URL(string: link + (endpoint?.rawValue ?? "")) else { throw RequestMakerError.failedURL }
         request = URLRequest(url: url)
     }
     
     func makeGet() {
         request?.httpMethod = "GET"
+    }
+    
+    func makePost(_ dataObject: Encodable) throws {
+        request?.httpMethod = "POST"
+        request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let data = try JSONEncoder().encode(dataObject)
+        request?.httpBody = data
     }
     
     func addAuthorization(token: String) {
@@ -41,5 +49,5 @@ class RequestMaker {
 }
 
 enum RequestMakerError: Error {
-    case noRequest, failedURL, failedAuthWithLogin
+    case noRequest, failedURL, failedAuthWithLogin, noServer
 }

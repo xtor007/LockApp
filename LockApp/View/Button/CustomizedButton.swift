@@ -10,11 +10,20 @@ import SwiftUI
 struct CustomizedButton: View {
     let text: String
     @Binding var isLoading: Bool
+    @Binding var isAvaliable: Bool
     let onTap: () -> Void
+    
+    init(text: String, isLoading: Binding<Bool> = .constant(false), isAvaliable: Binding<Bool> = .constant(true), onTap: @escaping () -> Void) {
+        self.text = text
+        self._isLoading = isLoading
+        self._isAvaliable = isAvaliable
+        self.onTap = onTap
+    }
     
     var body: some View {
         Button(action: {
             guard !isLoading else { return }
+            guard isAvaliable else { return }
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             onTap()
         }, label: {
@@ -36,7 +45,7 @@ struct CustomizedButton: View {
             .frame(height: 60)
             .background {
                 Capsule()
-                    .fill(Color(.accent))
+                    .fill(isAvaliable ? Color(.accent) : Color(.grayAccent))
                     .shadow(color: Color(.shadow), radius: 5)
             }
         })
@@ -44,8 +53,8 @@ struct CustomizedButton: View {
 }
 
 #Preview {
-    @State var isLoading = true
-    return CustomizedButton(text: "Button", isLoading: $isLoading) {
+    @State var isLoading = false
+    return CustomizedButton(text: "Button", isLoading: $isLoading, isAvaliable: .constant(false)) {
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             isLoading = false

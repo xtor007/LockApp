@@ -37,6 +37,14 @@
 		FF3BCDBE2BF5F571005AE399 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDBD2BF5F571005AE399 /* RegistrationView.swift */; };
 		FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDBF2BF5F8CD005AE399 /* SmallButton.swift */; };
 		FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */; };
+		FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDC72BF6165F005AE399 /* ChangePasswordViewModel.swift */; };
+		FF3BCDCD2BF61FCB005AE399 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDCC2BF61FCB005AE399 /* ChangePasswordView.swift */; };
+		FF3BCDD02BF62467005AE399 /* UpdaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDCF2BF62467005AE399 /* UpdaterView.swift */; };
+		FF3BCDD22BF62B60005AE399 /* ChangePasswordViewModel+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD12BF62B60005AE399 /* ChangePasswordViewModel+Email.swift */; };
+		FF3BCDD42BF62D35005AE399 /* ChangePasswordEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD32BF62D35005AE399 /* ChangePasswordEmail.swift */; };
+		FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD52BF62ECA005AE399 /* ChangePasswordCode.swift */; };
+		FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD72BF6374D005AE399 /* ChangePasswordViewModel+Password.swift */; };
+		FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD92BF6386A005AE399 /* PasswordContainer.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -74,6 +82,14 @@
 		FF3BCDBD2BF5F571005AE399 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		FF3BCDBF2BF5F8CD005AE399 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationShowerDelegate.swift; sourceTree = "<group>"; };
+		FF3BCDC72BF6165F005AE399 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		FF3BCDCC2BF61FCB005AE399 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		FF3BCDCF2BF62467005AE399 /* UpdaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterView.swift; sourceTree = "<group>"; };
+		FF3BCDD12BF62B60005AE399 /* ChangePasswordViewModel+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangePasswordViewModel+Email.swift"; sourceTree = "<group>"; };
+		FF3BCDD32BF62D35005AE399 /* ChangePasswordEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEmail.swift; sourceTree = "<group>"; };
+		FF3BCDD52BF62ECA005AE399 /* ChangePasswordCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordCode.swift; sourceTree = "<group>"; };
+		FF3BCDD72BF6374D005AE399 /* ChangePasswordViewModel+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangePasswordViewModel+Password.swift"; sourceTree = "<group>"; };
+		FF3BCDD92BF6386A005AE399 /* PasswordContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordContainer.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +132,7 @@
 		FF3BCD662BF51F1C005AE399 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDCE2BF6244D005AE399 /* Updater */,
 				FF3BCD792BF52977005AE399 /* ActivityIndicator */,
 				FF3BCD762BF527B4005AE399 /* Button */,
 				FF3BCD732BF523E6005AE399 /* Field */,
@@ -204,6 +221,7 @@
 		FF3BCD7C2BF52D5F005AE399 /* Preparation */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDC42BF615C0005AE399 /* ChangePassword */,
 				FF3BCDB82BF5F47B005AE399 /* Registration */,
 				FF3BCD9F2BF550CE005AE399 /* Loading */,
 				FF3BCD7D2BF52D84005AE399 /* EnterServer */,
@@ -371,6 +389,9 @@
 				FF3BCD992BF5410E005AE399 /* ValidServerResponse.swift */,
 				FF3BCDB42BF55F31005AE399 /* AuthTokens.swift */,
 				FF3BCDB62BF56275005AE399 /* EmployerModel.swift */,
+				FF3BCDD32BF62D35005AE399 /* ChangePasswordEmail.swift */,
+				FF3BCDD52BF62ECA005AE399 /* ChangePasswordCode.swift */,
+				FF3BCDD92BF6386A005AE399 /* PasswordContainer.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -407,6 +428,41 @@
 				FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FF3BCDC42BF615C0005AE399 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDC92BF61FA7005AE399 /* View */,
+				FF3BCDC62BF61625005AE399 /* ViewModel */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		FF3BCDC62BF61625005AE399 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDC72BF6165F005AE399 /* ChangePasswordViewModel.swift */,
+				FF3BCDD72BF6374D005AE399 /* ChangePasswordViewModel+Password.swift */,
+				FF3BCDD12BF62B60005AE399 /* ChangePasswordViewModel+Email.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF3BCDC92BF61FA7005AE399 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDCC2BF61FCB005AE399 /* ChangePasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF3BCDCE2BF6244D005AE399 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDCF2BF62467005AE399 /* UpdaterView.swift */,
+			);
+			path = Updater;
 			sourceTree = "<group>";
 		};
 		FFDF33B92BF3A5FB0070688B = {
@@ -511,7 +567,9 @@
 			files = (
 				FF3BCDB72BF56275005AE399 /* EmployerModel.swift in Sources */,
 				FF3BCD872BF53274005AE399 /* SwiftUIAlert.swift in Sources */,
+				FF3BCDD22BF62B60005AE399 /* ChangePasswordViewModel+Email.swift in Sources */,
 				FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */,
+				FF3BCDCD2BF61FCB005AE399 /* ChangePasswordView.swift in Sources */,
 				FF3BCDBB2BF5F4B0005AE399 /* RegistrationViewModel.swift in Sources */,
 				FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */,
 				FF3BCDB52BF55F31005AE399 /* AuthTokens.swift in Sources */,
@@ -525,8 +583,11 @@
 				FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */,
 				FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */,
 				FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */,
+				FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
+				FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */,
 				FF3BCD8C2BF5349A005AE399 /* StandartBackgroundWrapper.swift in Sources */,
+				FF3BCDD02BF62467005AE399 /* UpdaterView.swift in Sources */,
 				FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */,
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
@@ -536,10 +597,13 @@
 				FF3BCD802BF52E07005AE399 /* EnterServerView.swift in Sources */,
 				FF3BCD8F2BF53965005AE399 /* CloseKeyboardWrapper.swift in Sources */,
 				FF3BCDA22BF550EB005AE399 /* LoadingViewModel.swift in Sources */,
+				FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */,
+				FF3BCDD42BF62D35005AE399 /* ChangePasswordEmail.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
+				FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
