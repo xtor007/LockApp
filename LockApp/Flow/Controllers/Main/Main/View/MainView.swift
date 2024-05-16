@@ -14,6 +14,10 @@ struct MainView: View {
         VStack {
             header
             Spacer()
+            OpenButton(state: $viewModel.openDoorButtonState) {
+                viewModel.openDoor()
+            }
+            Spacer()
             footer
         }
         .padding(.horizontal, 16)

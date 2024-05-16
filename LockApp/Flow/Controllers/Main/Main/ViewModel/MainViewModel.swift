@@ -9,6 +9,8 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     
+    @Published var openDoorButtonState = OpenButtonState.ready
+    
     @Published var name = ""
     @Published var average = 0.0
     
@@ -19,6 +21,19 @@ class MainViewModel: ObservableObject {
     func didLoad() {
         updateOnScreenData()
         updateAllData()
+    }
+    
+    func openDoor() {
+        openDoorButtonState = .opening
+        Task {
+            do {
+                let isSuccess = try await openByServer()
+                updateOpenButtonState(isSuccess)
+            } catch {
+                updateOpenButtonState(false)
+                showError(error)
+            }
+        }
     }
     
     func updateAllData() {
@@ -34,6 +49,17 @@ class MainViewModel: ObservableObject {
                 }
             } catch {
                 showError(error)
+            }
+        }
+    }
+    
+    private func updateOpenButtonState(_ isSuccess: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            openDoorButtonState = isSuccess ? .success : .failed
+            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 5) { [weak self] in
+                guard let self else { return }
+                openDoorButtonState = .ready
             }
         }
     }

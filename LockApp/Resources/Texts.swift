@@ -46,6 +46,7 @@ enum Texts {
         case hello = "Hello, "
         case logs = "Logs"
         case average = "Average:"
+        case open = "OPEN"
     }
     enum Admin: String {
         case admin = "Admin"

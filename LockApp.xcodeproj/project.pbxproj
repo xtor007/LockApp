@@ -54,6 +54,10 @@
 		FF3BCDEF2BF662CD005AE399 /* Double+rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDEE2BF662CD005AE399 /* Double+rounded.swift */; };
 		FF3BCDF12BF6657D005AE399 /* MainViewModel+Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDF02BF6657D005AE399 /* MainViewModel+Statistic.swift */; };
 		FF3BCDF52BF666A7005AE399 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDF42BF666A7005AE399 /* Statistic.swift */; };
+		FF3BCDF82BF67112005AE399 /* OpenButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDF72BF67112005AE399 /* OpenButtonState.swift */; };
+		FF3BCDFA2BF67145005AE399 /* OpenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDF92BF67145005AE399 /* OpenButton.swift */; };
+		FF3BCDFC2BF674B4005AE399 /* MainViewModel+Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */; };
+		FF3BCDFE2BF67551005AE399 /* OpeningResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDFD2BF67551005AE399 /* OpeningResult.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -108,6 +112,10 @@
 		FF3BCDEE2BF662CD005AE399 /* Double+rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rounded.swift"; sourceTree = "<group>"; };
 		FF3BCDF02BF6657D005AE399 /* MainViewModel+Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Statistic.swift"; sourceTree = "<group>"; };
 		FF3BCDF42BF666A7005AE399 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		FF3BCDF72BF67112005AE399 /* OpenButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenButtonState.swift; sourceTree = "<group>"; };
+		FF3BCDF92BF67145005AE399 /* OpenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenButton.swift; sourceTree = "<group>"; };
+		FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Open.swift"; sourceTree = "<group>"; };
+		FF3BCDFD2BF67551005AE399 /* OpeningResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningResult.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -411,6 +419,7 @@
 				FF3BCDF32BF66692005AE399 /* Info */,
 				FF3BCDF22BF6667F005AE399 /* Auth */,
 				FF3BCD992BF5410E005AE399 /* ValidServerResponse.swift */,
+				FF3BCDFD2BF67551005AE399 /* OpeningResult.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -513,6 +522,7 @@
 		FF3BCDE62BF65B2A005AE399 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDF62BF67102005AE399 /* Model */,
 				FF3BCDEA2BF660FD005AE399 /* View */,
 				FF3BCDE72BF65B36005AE399 /* ViewModel */,
 			);
@@ -524,6 +534,7 @@
 			children = (
 				FF3BCDE82BF65B45005AE399 /* MainViewModel.swift */,
 				FF3BCDF02BF6657D005AE399 /* MainViewModel+Statistic.swift */,
+				FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -532,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3BCDEB2BF6610A005AE399 /* MainView.swift */,
+				FF3BCDF92BF67145005AE399 /* OpenButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -562,6 +574,14 @@
 				FF3BCDF42BF666A7005AE399 /* Statistic.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		FF3BCDF62BF67102005AE399 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDF72BF67112005AE399 /* OpenButtonState.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FFDF33B92BF3A5FB0070688B = {
@@ -683,7 +703,9 @@
 				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
 				FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */,
 				FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */,
+				FF3BCDF82BF67112005AE399 /* OpenButtonState.swift in Sources */,
 				FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */,
+				FF3BCDFC2BF674B4005AE399 /* MainViewModel+Open.swift in Sources */,
 				FF3BCDEC2BF6610A005AE399 /* MainView.swift in Sources */,
 				FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
@@ -701,12 +723,14 @@
 				FF3BCDA22BF550EB005AE399 /* LoadingViewModel.swift in Sources */,
 				FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */,
 				FF3BCDD42BF62D35005AE399 /* ChangePasswordEmail.swift in Sources */,
+				FF3BCDFE2BF67551005AE399 /* OpeningResult.swift in Sources */,
 				FF3BCDE92BF65B45005AE399 /* MainViewModel.swift in Sources */,
 				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FF3BCDF52BF666A7005AE399 /* Statistic.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
+				FF3BCDFA2BF67145005AE399 /* OpenButton.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
 				FF3BCDEF2BF662CD005AE399 /* Double+rounded.swift in Sources */,
 				FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */,
