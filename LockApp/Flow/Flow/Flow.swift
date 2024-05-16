@@ -24,6 +24,7 @@ class Flow {
     private var changePasswordVC: UIViewController?
     
     private var tabBarMaker: TabBarMaker?
+    private var mainViewModel: MainViewModel?
     
     // MARK: - Life
     
@@ -112,6 +113,7 @@ extension Flow {
     
     private func clearMainMemory() {
         tabBarMaker = nil
+        mainViewModel = nil
     }
 }
 
@@ -174,7 +176,7 @@ extension Flow: RegistrationShowerDelegate {
         let tabBarMaker = TabBarMaker()
         self.tabBarMaker = tabBarMaker
         
-        let mainVC = factory.makeMainVC()
+        let mainVC = createMainVC()
         let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? factory.makeAdminVC() : nil
         let settingsVC = factory.makeSettingsVC()
         
@@ -184,4 +186,15 @@ extension Flow: RegistrationShowerDelegate {
         clearPrepareMemory()
     }
     
+}
+
+// MARK: - Create
+
+extension Flow {
+    private func createMainVC() -> UIViewController {
+        let mainViewModel = MainViewModel()
+        self.mainViewModel = mainViewModel
+        let mainVC = factory.makeMainVC(mainViewModel)
+        return mainVC
+    }
 }

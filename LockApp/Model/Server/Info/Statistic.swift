@@ -1,0 +1,12 @@
+//
+//  Statistic.swift
+//  LockApp
+//
+//  Created by Anatoliy Khramchenko on 16.05.2024.
+//
+
+import Foundation
+
+struct Statistic: Codable {
+    let averageTime: Double
+}

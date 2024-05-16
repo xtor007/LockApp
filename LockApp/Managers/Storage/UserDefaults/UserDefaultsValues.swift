@@ -46,4 +46,7 @@ extension UserDefaults {
     
     @UserDefaultsValue<Date>(storageKey: "expirationDate")
     static var expirationDate: Date?
+    
+    @UserDefaultsValue<Double>(storageKey: "averageTime")
+    static var averageTime: Double?
 }

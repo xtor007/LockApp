@@ -29,9 +29,8 @@ class FlowFactory {
         return vc
     }
     
-    func makeMainVC() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .blue
+    func makeMainVC(_ viewModel: MainViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: MainView(viewModel: viewModel))
         vc.tabBarItem = UITabBarItem(
             title: Texts.Main.info.rawValue,
             image: UIImage(systemName: "info.bubble"),

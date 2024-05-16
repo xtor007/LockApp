@@ -43,6 +43,9 @@ enum Texts {
     // MARK: Main
     enum Main: String {
         case info = "Info"
+        case hello = "Hello, "
+        case logs = "Logs"
+        case average = "Average:"
     }
     enum Admin: String {
         case admin = "Admin"
