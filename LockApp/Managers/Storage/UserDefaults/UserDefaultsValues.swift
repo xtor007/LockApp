@@ -46,7 +46,4 @@ extension UserDefaults {
     
     @UserDefaultsValue<Date>(storageKey: "expirationDate")
     static var expirationDate: Date?
-    
-    @UserDefaultsValue<EmployerModel>(storageKey: "userInfo")
-    static var userInfo: EmployerModel?
 }

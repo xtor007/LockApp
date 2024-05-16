@@ -28,4 +28,37 @@ class FlowFactory {
         let vc = UIHostingController(rootView: ChangePasswordView(viewModel: viewModel))
         return vc
     }
+    
+    func makeMainVC() -> UIViewController {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .blue
+        vc.tabBarItem = UITabBarItem(
+            title: Texts.Main.info.rawValue,
+            image: UIImage(systemName: "info.bubble"),
+            tag: 0
+        )
+        return vc
+    }
+    
+    func makeAdminVC() -> UIViewController {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .red
+        vc.tabBarItem = UITabBarItem(
+            title: Texts.Admin.admin.rawValue,
+            image: UIImage(systemName: "list.bullet.clipboard.fill"),
+            tag: 0
+        )
+        return vc
+    }
+    
+    func makeSettingsVC() -> UIViewController {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .yellow
+        vc.tabBarItem = UITabBarItem(
+            title: Texts.Settings.settings.rawValue,
+            image: UIImage(systemName: "gear.circle.fill"),
+            tag: 0
+        )
+        return vc
+    }
 }

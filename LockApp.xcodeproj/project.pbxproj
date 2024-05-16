@@ -45,6 +45,10 @@
 		FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD52BF62ECA005AE399 /* ChangePasswordCode.swift */; };
 		FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD72BF6374D005AE399 /* ChangePasswordViewModel+Password.swift */; };
 		FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDD92BF6386A005AE399 /* PasswordContainer.swift */; };
+		FF3BCDDE2BF64380005AE399 /* TabBarMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDDD2BF64380005AE399 /* TabBarMaker.swift */; };
+		FF3BCDE12BF6491B005AE399 /* DataRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDE02BF6491B005AE399 /* DataRefresher.swift */; };
+		FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDE22BF649DD005AE399 /* AuthTokenDistributor.swift */; };
+		FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDE42BF64E6B005AE399 /* UserDefaultsDataValues.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -90,6 +94,10 @@
 		FF3BCDD52BF62ECA005AE399 /* ChangePasswordCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordCode.swift; sourceTree = "<group>"; };
 		FF3BCDD72BF6374D005AE399 /* ChangePasswordViewModel+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangePasswordViewModel+Password.swift"; sourceTree = "<group>"; };
 		FF3BCDD92BF6386A005AE399 /* PasswordContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordContainer.swift; sourceTree = "<group>"; };
+		FF3BCDDD2BF64380005AE399 /* TabBarMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMaker.swift; sourceTree = "<group>"; };
+		FF3BCDE02BF6491B005AE399 /* DataRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRefresher.swift; sourceTree = "<group>"; };
+		FF3BCDE22BF649DD005AE399 /* AuthTokenDistributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenDistributor.swift; sourceTree = "<group>"; };
+		FF3BCDE42BF64E6B005AE399 /* UserDefaultsDataValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataValues.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 		FF3BCD6A2BF51F6C005AE399 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDDB2BF6436C005AE399 /* Main */,
 				FF3BCD7C2BF52D5F005AE399 /* Preparation */,
 			);
 			path = Controllers;
@@ -292,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3BCD902BF53D63005AE399 /* UserDefaultsValues.swift */,
+				FF3BCDE42BF64E6B005AE399 /* UserDefaultsDataValues.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -307,6 +317,7 @@
 		FF3BCD962BF540D2005AE399 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDDF2BF64905005AE399 /* Refresher */,
 				FF3BCDB02BF55C74005AE399 /* Model */,
 				FF3BCDAF2BF55C5C005AE399 /* Helpers */,
 				FF3BCDAE2BF55C4B005AE399 /* Manager */,
@@ -370,7 +381,7 @@
 			children = (
 				FF3BCD9B2BF54142005AE399 /* RequestMaker.swift */,
 				FF3BCDA62BF5559F005AE399 /* NetworkMonitor.swift */,
-				FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */,
+				FF3BCDE22BF649DD005AE399 /* AuthTokenDistributor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -463,6 +474,31 @@
 				FF3BCDCF2BF62467005AE399 /* UpdaterView.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		FF3BCDDB2BF6436C005AE399 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDDC2BF64371005AE399 /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FF3BCDDC2BF64371005AE399 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDDD2BF64380005AE399 /* TabBarMaker.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		FF3BCDDF2BF64905005AE399 /* Refresher */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */,
+				FF3BCDE02BF6491B005AE399 /* DataRefresher.swift */,
+			);
+			path = Refresher;
 			sourceTree = "<group>";
 		};
 		FFDF33B92BF3A5FB0070688B = {
@@ -569,6 +605,7 @@
 				FF3BCD872BF53274005AE399 /* SwiftUIAlert.swift in Sources */,
 				FF3BCDD22BF62B60005AE399 /* ChangePasswordViewModel+Email.swift in Sources */,
 				FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */,
+				FF3BCDE12BF6491B005AE399 /* DataRefresher.swift in Sources */,
 				FF3BCDCD2BF61FCB005AE399 /* ChangePasswordView.swift in Sources */,
 				FF3BCDBB2BF5F4B0005AE399 /* RegistrationViewModel.swift in Sources */,
 				FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */,
@@ -599,10 +636,13 @@
 				FF3BCDA22BF550EB005AE399 /* LoadingViewModel.swift in Sources */,
 				FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */,
 				FF3BCDD42BF62D35005AE399 /* ChangePasswordEmail.swift in Sources */,
+				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
+				FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */,
+				FF3BCDDE2BF64380005AE399 /* TabBarMaker.swift in Sources */,
 				FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 			);

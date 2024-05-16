@@ -23,6 +23,8 @@ class Flow {
     private var changePasswordViewModel: ChangePasswordViewModel?
     private var changePasswordVC: UIViewController?
     
+    private var tabBarMaker: TabBarMaker?
+    
     // MARK: - Life
     
     func start() {
@@ -54,8 +56,9 @@ extension Flow {
             if UserDefaults.expirationDate ?? .distantFuture > .now {
                 refreshToken()
             } else {
-                DispatchQueue.main.async {
-                    // Main
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    showMain()
                 }
             }
         } else {
@@ -64,7 +67,7 @@ extension Flow {
                 if UserDefaults.userInfo == nil {
                     showRegistration()
                 } else {
-                    // Main
+                    showMain()
                 }
             }
         }
@@ -76,14 +79,39 @@ extension Flow {
                 guard let self else { return }
                 switch result {
                 case .success(_):
-                    ()
-                    // Main
+                    showMain()
                 case .failure(let error):
                     print(error)
                     showRegistration()
                 }
             }
         }
+    }
+    
+    private func refreshData() {
+        DataRefresher().refreshData { result in
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                switch result {
+                case .success(_):
+                    showMain()
+                case .failure(let error):
+                    print(error)
+                    showRegistration()
+                }
+            }
+        }
+    }
+    
+    private func clearPrepareMemory() {
+        enterServerViewModel = nil
+        loadingViewModel = nil
+        registrationViewModel = nil
+        registrationVC = nil
+    }
+    
+    private func clearMainMemory() {
+        tabBarMaker = nil
     }
 }
 
@@ -110,6 +138,7 @@ extension Flow: RegistrationShowerDelegate {
         let vc = factory.makeRegistrationVC(registrationViewModel)
         self.registrationVC = vc
         executor.showVC(vc)
+        clearMainMemory()
     }
     
     func showChangePasswordFromRegistration() {
@@ -131,7 +160,28 @@ extension Flow: RegistrationShowerDelegate {
     }
     
     func showMain() {
-        print("main")
+        if UserDefaults.userInfo == nil {
+            showLoading { [weak self] in
+                guard let self else { return }
+                refreshData()
+            }
+            return
+        }
+        showTabBar()
+    }
+    
+    func showTabBar() {
+        let tabBarMaker = TabBarMaker()
+        self.tabBarMaker = tabBarMaker
+        
+        let mainVC = factory.makeMainVC()
+        let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? factory.makeAdminVC() : nil
+        let settingsVC = factory.makeSettingsVC()
+        
+        let tabBarVC = tabBarMaker.makeTabBar(main: mainVC, admin: adminVC, settings: settingsVC)
+        executor.showVC(tabBarVC)
+        
+        clearPrepareMemory()
     }
     
 }

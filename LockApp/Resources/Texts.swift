@@ -39,4 +39,15 @@ enum Texts {
         case newPassword = "New password"
         case confirmPassword = "Confirm password"
     }
+    
+    // MARK: Main
+    enum Main: String {
+        case info = "Info"
+    }
+    enum Admin: String {
+        case admin = "Admin"
+    }
+    enum Settings: String {
+        case settings = "Settings"
+    }
 }
