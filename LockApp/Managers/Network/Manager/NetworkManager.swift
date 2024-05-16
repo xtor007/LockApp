@@ -10,7 +10,9 @@ import Foundation
 class NetworkManager {
     func makeRequest<T: Codable>(_ request: URLRequest) async throws -> T {
         let data: Data = try await makeRequest(request)
-        return try JSONDecoder().decode(T.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(T.self, from: data)
     }
 
     func makeRequest(_ request: URLRequest) async throws -> Data {

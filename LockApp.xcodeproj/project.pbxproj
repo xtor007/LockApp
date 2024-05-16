@@ -33,6 +33,10 @@
 		FF3BCDB22BF55CDB005AE399 /* TokenRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */; };
 		FF3BCDB52BF55F31005AE399 /* AuthTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDB42BF55F31005AE399 /* AuthTokens.swift */; };
 		FF3BCDB72BF56275005AE399 /* EmployerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDB62BF56275005AE399 /* EmployerModel.swift */; };
+		FF3BCDBB2BF5F4B0005AE399 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDBA2BF5F4B0005AE399 /* RegistrationViewModel.swift */; };
+		FF3BCDBE2BF5F571005AE399 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDBD2BF5F571005AE399 /* RegistrationView.swift */; };
+		FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDBF2BF5F8CD005AE399 /* SmallButton.swift */; };
+		FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -66,6 +70,10 @@
 		FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefresher.swift; sourceTree = "<group>"; };
 		FF3BCDB42BF55F31005AE399 /* AuthTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokens.swift; sourceTree = "<group>"; };
 		FF3BCDB62BF56275005AE399 /* EmployerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerModel.swift; sourceTree = "<group>"; };
+		FF3BCDBA2BF5F4B0005AE399 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		FF3BCDBD2BF5F571005AE399 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		FF3BCDBF2BF5F8CD005AE399 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
+		FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationShowerDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3BCD772BF527C2005AE399 /* CustomizedButton.swift */,
+				FF3BCDBF2BF5F8CD005AE399 /* SmallButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 		FF3BCD7C2BF52D5F005AE399 /* Preparation */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCDB82BF5F47B005AE399 /* Registration */,
 				FF3BCD9F2BF550CE005AE399 /* Loading */,
 				FF3BCD7D2BF52D84005AE399 /* EnterServer */,
 			);
@@ -365,6 +375,40 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
+		FF3BCDB82BF5F47B005AE399 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDC12BF609C4005AE399 /* Delegate */,
+				FF3BCDBC2BF5F560005AE399 /* View */,
+				FF3BCDB92BF5F49A005AE399 /* ViewModel */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		FF3BCDB92BF5F49A005AE399 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDBA2BF5F4B0005AE399 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF3BCDBC2BF5F560005AE399 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDBD2BF5F571005AE399 /* RegistrationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF3BCDC12BF609C4005AE399 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCDC22BF609D8005AE399 /* RegistrationShowerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		FFDF33B92BF3A5FB0070688B = {
 			isa = PBXGroup;
 			children = (
@@ -468,11 +512,13 @@
 				FF3BCDB72BF56275005AE399 /* EmployerModel.swift in Sources */,
 				FF3BCD872BF53274005AE399 /* SwiftUIAlert.swift in Sources */,
 				FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */,
+				FF3BCDBB2BF5F4B0005AE399 /* RegistrationViewModel.swift in Sources */,
 				FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */,
 				FF3BCDB52BF55F31005AE399 /* AuthTokens.swift in Sources */,
 				FF3BCDA52BF55158005AE399 /* LoadingView.swift in Sources */,
 				FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */,
 				FF3BCDAB2BF558BF005AE399 /* Keychain.swift in Sources */,
+				FF3BCDBE2BF5F571005AE399 /* RegistrationView.swift in Sources */,
 				FF3BCD702BF52004005AE399 /* Flow.swift in Sources */,
 				FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */,
 				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
@@ -481,6 +527,7 @@
 				FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
 				FF3BCD8C2BF5349A005AE399 /* StandartBackgroundWrapper.swift in Sources */,
+				FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */,
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
 				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,
@@ -493,6 +540,7 @@
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
+				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,13 +10,21 @@ import SwiftUI
 struct CustomizedTextField: View {
     let placeholder: String
     @Binding var text: String
+    let isSecure: Bool
     
     @State var isFieldEditing = false
     
+    @FocusState var focus: Bool?
+    
+    init(placeholder: String, text: Binding<String>, isSecure: Bool = false) {
+        self.placeholder = placeholder
+        self._text = text
+        self.isSecure = isSecure
+        self.isFieldEditing = isFieldEditing
+    }
+    
     var body: some View {
-        TextField(placeholder, text: $text) { isEditing in
-            isFieldEditing = isEditing
-        }
+        field
             .textInputAutocapitalization(.never)
             .font(.system(size: 20))
             .padding(12)
@@ -36,9 +44,24 @@ struct CustomizedTextField: View {
             return Color(.grayAccent)
         }
     }
+    
+    @ViewBuilder
+    var field: some View {
+        if isSecure {
+            SecureField(placeholder, text: $text)
+                .focused($focus, equals: true)
+                .onChange(of: focus) { _, newValue in
+                    isFieldEditing = newValue ?? false
+                }
+        } else {
+            TextField(placeholder, text: $text) { isEditing in
+                isFieldEditing = isEditing
+            }
+        }
+    }
 }
 
 #Preview {
     @State var text = ""
-    return CustomizedTextField(placeholder: "Enter server", text: $text)
+    return CustomizedTextField(placeholder: "Enter server", text: $text, isSecure: true)
 }

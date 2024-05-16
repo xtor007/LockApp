@@ -24,6 +24,15 @@ class RequestMaker {
         request?.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
     
+    func addAuthorization(login: String, password: String) throws {
+        let loginString = "\(login):\(password)"
+        guard let loginData = loginString.data(using: .utf8) else {
+            throw RequestMakerError.failedAuthWithLogin
+        }
+        let base64LoginString = loginData.base64EncodedString()
+        request?.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+    }
+    
     func getRequest() throws -> URLRequest {
         guard let request = request else { throw RequestMakerError.noRequest }
         return request
@@ -32,5 +41,5 @@ class RequestMaker {
 }
 
 enum RequestMakerError: Error {
-    case noRequest, failedURL
+    case noRequest, failedURL, failedAuthWithLogin
 }

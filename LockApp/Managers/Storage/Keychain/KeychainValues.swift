@@ -23,7 +23,7 @@ struct KeychainValue<T: Equatable> {
         }
         set {
             let oldValue = Keychain.shared.value(forKey: key) as? T
-            let _ = Keychain.shared.save(wrappedValue, forKey: key)
+            let _ = Keychain.shared.save(newValue, forKey: key)
             if let notificationKey, oldValue != newValue {
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: notificationKey, object: nil)

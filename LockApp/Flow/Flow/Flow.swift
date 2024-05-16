@@ -17,6 +17,7 @@ class Flow {
     
     private var enterServerViewModel: EnterServerViewModel?
     private var loadingViewModel: LoadingViewModel?
+    private var registrationViewModel: RegistrationViewModel?
     
     // MARK: - Life
     
@@ -54,9 +55,10 @@ extension Flow {
                 }
             }
         } else {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
                 if UserDefaults.userInfo == nil {
-                    // Reg
+                    showRegistration()
                 } else {
                     // Main
                 }
@@ -74,7 +76,7 @@ extension Flow {
                     // Main
                 case .failure(let error):
                     print(error)
-                    // Reg
+                    showRegistration()
                 }
             }
         }
@@ -83,9 +85,9 @@ extension Flow {
 
 // MARK: - Show screen
 
-extension Flow {
+extension Flow: RegistrationShowerDelegate {
     func showEnterServer() {
-        let enterServerViewModel = EnterServerViewModel()
+        let enterServerViewModel = self.enterServerViewModel ?? EnterServerViewModel()
         self.enterServerViewModel = enterServerViewModel
         let vc = factory.makeEnterServerVC(enterServerViewModel)
         executor.showVC(vc)
@@ -97,4 +99,20 @@ extension Flow {
         let vc = factory.makeLoadingVC(loadingViewModel)
         executor.showVC(vc)
     }
+    
+    func showRegistration() {
+        let registrationViewModel = RegistrationViewModel(delegate: self)
+        self.registrationViewModel = registrationViewModel
+        let vc = factory.makeRegistrationVC(registrationViewModel)
+        executor.showVC(vc)
+    }
+    
+    func showChangePasswordFromRegistration() {
+        print("change")
+    }
+    
+    func showMain() {
+        print("main")
+    }
+    
 }

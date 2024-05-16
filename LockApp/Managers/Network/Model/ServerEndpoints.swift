@@ -11,4 +11,5 @@ enum ServerEndpoint: String {
     case validate = "/validate"
     
     case refreshToken = "/auth/refresh"
+    case getToken = "/auth/getToken"
 }

@@ -17,4 +17,9 @@ class FlowFactory {
         let vc = UIHostingController(rootView: LoadingView(viewModel: viewModel))
         return vc
     }
+    
+    func makeRegistrationVC(_ viewModel: RegistrationViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: RegistrationView(viewModel: viewModel))
+        return vc
+    }
 }
