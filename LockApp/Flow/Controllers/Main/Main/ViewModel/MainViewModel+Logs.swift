@@ -45,7 +45,6 @@ extension MainViewModel {
         if segmentStart != 0 {
             result.append(.init(start: segmentStart, finish: 1))
         }
-        print(result)
         return result
     }
     

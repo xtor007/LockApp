@@ -50,9 +50,8 @@ class FlowFactory {
         return vc
     }
     
-    func makeSettingsVC() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .yellow
+    func makeSettingsVC(_ viewModel: SettingsViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: SettingsView(viewModel: viewModel))
         vc.tabBarItem = UITabBarItem(
             title: Texts.Settings.settings.rawValue,
             image: UIImage(systemName: "gear.circle.fill"),

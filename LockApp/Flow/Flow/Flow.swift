@@ -25,6 +25,7 @@ class Flow {
     
     private var tabBarMaker: TabBarMaker?
     private var mainViewModel: MainViewModel?
+    private var settingsViewModel: SettingsViewModel?
     
     // MARK: - Life
     
@@ -114,12 +115,13 @@ extension Flow {
     private func clearMainMemory() {
         tabBarMaker = nil
         mainViewModel = nil
+        settingsViewModel = nil
     }
 }
 
 // MARK: - Show screen
 
-extension Flow: RegistrationShowerDelegate {
+extension Flow: RegistrationShowerDelegate, SettingsShowerDelegate {
     func showEnterServer() {
         let enterServerViewModel = self.enterServerViewModel ?? EnterServerViewModel()
         self.enterServerViewModel = enterServerViewModel
@@ -147,38 +149,44 @@ extension Flow: RegistrationShowerDelegate {
         showChangePassword(from: registrationVC)
     }
     
-    func showChangePassword(from vc: UIViewController?) {
+    func openChangePasswordFromSettings() {
+        showChangePassword(from: tabBarMaker?.settingsController, UserDefaults.userInfo?.email)
+    }
+    
+    func showChangePassword(from vc: UIViewController?, _ email: String? = nil) {
         let changePasswordViewModel = ChangePasswordViewModel { [weak self] in
             guard let self else { return }
             self.changePasswordVC?.navigationController?.popViewController(animated: true)
             self.changePasswordVC = nil
             self.changePasswordViewModel = nil
         }
+        changePasswordViewModel.email = email ?? ""
         self.changePasswordViewModel = changePasswordViewModel
         let changePasswordVC = factory.makeChangePasswordVC(changePasswordViewModel)
         self.changePasswordVC = changePasswordVC
+        changePasswordVC.hidesBottomBarWhenPushed = true
         let navigation = (vc as? UINavigationController) ?? vc?.navigationController
         navigation?.pushViewController(changePasswordVC, animated: true)
     }
     
     func showMain() {
-        if UserDefaults.userInfo == nil {
+        guard let info = UserDefaults.userInfo else {
             showLoading { [weak self] in
                 guard let self else { return }
                 refreshData()
             }
             return
         }
-        showTabBar()
+        showTabBar(info)
     }
     
-    func showTabBar() {
+    func showTabBar(_ user: EmployerModel) {
         let tabBarMaker = TabBarMaker()
         self.tabBarMaker = tabBarMaker
         
         let mainVC = createMainVC()
         let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? factory.makeAdminVC() : nil
-        let settingsVC = factory.makeSettingsVC()
+        let settingsVC = createSettingsVC(user)
         
         let tabBarVC = tabBarMaker.makeTabBar(main: mainVC, admin: adminVC, settings: settingsVC)
         executor.showVC(tabBarVC)
@@ -198,5 +206,13 @@ extension Flow {
         self.mainViewModel = mainViewModel
         let mainVC = factory.makeMainVC(mainViewModel)
         return mainVC
+    }
+    
+    private func createSettingsVC(_ user: EmployerModel) -> UIViewController {
+        let settingsViewModel = SettingsViewModel(user: user)
+        self.settingsViewModel = settingsViewModel
+        settingsViewModel.showerDelegate = self
+        let settingsVC = factory.makeSettingsVC(settingsViewModel)
+        return settingsVC
     }
 }

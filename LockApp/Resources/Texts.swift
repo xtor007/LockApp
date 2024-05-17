@@ -10,8 +10,10 @@ import Foundation
 enum Texts {
     
     // MARK: - Global
-    enum ErrorsTexts: String {
+    enum AlertTexts: String {
         case error = "Error"
+        case dangerous = "Dangerous action"
+        case areYouSure = "Are you sure?"
     }
     enum ButtonsTexts: String {
         case ok = "OK"
@@ -21,6 +23,9 @@ enum Texts {
         case next = "Next"
         case confirm = "Confirm"
         case prev = "Prev"
+        case changePassword = "Change password"
+        case logout = "Log out"
+        case cancel = "Cancel"
     }
     
     // MARK: - Preparation
@@ -53,6 +58,7 @@ enum Texts {
     }
     enum Settings: String {
         case settings = "Settings"
+        case failed = "Failed"
     }
     enum Logs: String {
         case noData = "No data available"

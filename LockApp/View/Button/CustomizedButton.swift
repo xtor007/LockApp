@@ -11,12 +11,14 @@ struct CustomizedButton: View {
     let text: String
     @Binding var isLoading: Bool
     @Binding var isAvaliable: Bool
+    @State var accentColor: Color
     let onTap: () -> Void
     
-    init(text: String, isLoading: Binding<Bool> = .constant(false), isAvaliable: Binding<Bool> = .constant(true), onTap: @escaping () -> Void) {
+    init(text: String, isLoading: Binding<Bool> = .constant(false), accentColor: Color = Color(.accent), isAvaliable: Binding<Bool> = .constant(true), onTap: @escaping () -> Void) {
         self.text = text
         self._isLoading = isLoading
         self._isAvaliable = isAvaliable
+        self.accentColor = accentColor
         self.onTap = onTap
     }
     
@@ -32,7 +34,7 @@ struct CustomizedButton: View {
                 if isLoading {
                     ActivityIndicator(
                         mainColor: Color(.background),
-                        backgroundColor: Color(.accent)
+                        backgroundColor: accentColor
                     )
                     .frame(height: 25)
                 } else {
@@ -45,7 +47,7 @@ struct CustomizedButton: View {
             .frame(height: 60)
             .background {
                 Capsule()
-                    .fill(isAvaliable ? Color(.accent) : Color(.grayAccent))
+                    .fill(isAvaliable ? accentColor : Color(.grayAccent))
                     .shadow(color: Color(.shadow), radius: 5)
             }
         })

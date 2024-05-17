@@ -64,6 +64,9 @@
 		FF3BCE072BF735F9005AE399 /* MainViewModel+Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE062BF735F9005AE399 /* MainViewModel+Logs.swift */; };
 		FF3BCE092BF73685005AE399 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE082BF73685005AE399 /* Date+Week.swift */; };
 		FF3BCE0C2BF73D52005AE399 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE0B2BF73D52005AE399 /* DB.swift */; };
+		FFB91AD52BF7CEFD0088762D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AD42BF7CEFD0088762D /* SettingsViewModel.swift */; };
+		FFB91AD82BF7CFDE0088762D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AD72BF7CFDE0088762D /* SettingsView.swift */; };
+		FFB91ADB2BF7D80E0088762D /* SettingsShowerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91ADA2BF7D80E0088762D /* SettingsShowerDelegate.swift */; };
 		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
 		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
 		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
@@ -139,6 +142,9 @@
 		FF3BCE062BF735F9005AE399 /* MainViewModel+Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Logs.swift"; sourceTree = "<group>"; };
 		FF3BCE082BF73685005AE399 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Week.swift"; sourceTree = "<group>"; };
 		FF3BCE0B2BF73D52005AE399 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		FFB91AD42BF7CEFD0088762D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FFB91AD72BF7CFDE0088762D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FFB91ADA2BF7D80E0088762D /* SettingsShowerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsShowerDelegate.swift; sourceTree = "<group>"; };
 		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
 		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
 		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
@@ -532,6 +538,7 @@
 		FF3BCDDB2BF6436C005AE399 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91AD22BF7CEE00088762D /* Serttings */,
 				FFC976B42BF79CC0004A1BEE /* Logs */,
 				FF3BCDE62BF65B2A005AE399 /* Main */,
 				FF3BCDDC2BF64371005AE399 /* TabBar */,
@@ -646,6 +653,40 @@
 				FFC9769D2BF741D1004A1BEE /* Protocol */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		FFB91AD22BF7CEE00088762D /* Serttings */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AD92BF7D7FA0088762D /* Delegate */,
+				FFB91AD62BF7CFD00088762D /* View */,
+				FFB91AD32BF7CEEF0088762D /* ViewModel */,
+			);
+			path = Serttings;
+			sourceTree = "<group>";
+		};
+		FFB91AD32BF7CEEF0088762D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AD42BF7CEFD0088762D /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB91AD62BF7CFD00088762D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AD72BF7CFDE0088762D /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB91AD92BF7D7FA0088762D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91ADA2BF7D80E0088762D /* SettingsShowerDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
@@ -845,6 +886,7 @@
 				FF3BCD722BF52131005AE399 /* FlowFactory.swift in Sources */,
 				FF3BCDE12BF6491B005AE399 /* DataRefresher.swift in Sources */,
 				FF3BCDCD2BF61FCB005AE399 /* ChangePasswordView.swift in Sources */,
+				FFB91ADB2BF7D80E0088762D /* SettingsShowerDelegate.swift in Sources */,
 				FF3BCDBB2BF5F4B0005AE399 /* RegistrationViewModel.swift in Sources */,
 				FF3BCD782BF527C2005AE399 /* CustomizedButton.swift in Sources */,
 				FF3BCDB52BF55F31005AE399 /* AuthTokens.swift in Sources */,
@@ -879,6 +921,7 @@
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
 				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,
+				FFB91AD52BF7CEFD0088762D /* SettingsViewModel.swift in Sources */,
 				FF3BCD752BF52415005AE399 /* CustomizedTextField.swift in Sources */,
 				FF3BCDB22BF55CDB005AE399 /* TokenRefresher.swift in Sources */,
 				FF3BCE002BF68715005AE399 /* StatisticDiagram.swift in Sources */,
@@ -895,6 +938,7 @@
 				FFC976B72BF79CF3004A1BEE /* LogsViewModel.swift in Sources */,
 				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
+				FFB91AD82BF7CFDE0088762D /* SettingsView.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
 				FFC976B12BF757F7004A1BEE /* GetLogsRequest.swift in Sources */,
 				FF3BCDF52BF666A7005AE399 /* Statistic.swift in Sources */,
