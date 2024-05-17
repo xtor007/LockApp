@@ -18,6 +18,15 @@ struct MainView: View {
                 viewModel.openDoor()
             }
             Spacer()
+            StatisticDiagram(
+                columns: $viewModel.statisticColomns,
+                startDate: $viewModel.startDate,
+                finishDate: $viewModel.finishDate
+            ) { direction in
+                viewModel.strollDiagram(direction)
+            }
+            .frame(height: 300)
+            Spacer()
             footer
         }
         .padding(.horizontal, 16)

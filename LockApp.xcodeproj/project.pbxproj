@@ -58,6 +58,20 @@
 		FF3BCDFA2BF67145005AE399 /* OpenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDF92BF67145005AE399 /* OpenButton.swift */; };
 		FF3BCDFC2BF674B4005AE399 /* MainViewModel+Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */; };
 		FF3BCDFE2BF67551005AE399 /* OpeningResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDFD2BF67551005AE399 /* OpeningResult.swift */; };
+		FF3BCE002BF68715005AE399 /* StatisticDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCDFF2BF68715005AE399 /* StatisticDiagram.swift */; };
+		FF3BCE022BF6878F005AE399 /* StstisticDiagramColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE012BF6878F005AE399 /* StstisticDiagramColumn.swift */; };
+		FF3BCE052BF68C0D005AE399 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE042BF68C0D005AE399 /* Date+String.swift */; };
+		FF3BCE072BF735F9005AE399 /* MainViewModel+Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE062BF735F9005AE399 /* MainViewModel+Logs.swift */; };
+		FF3BCE092BF73685005AE399 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE082BF73685005AE399 /* Date+Week.swift */; };
+		FF3BCE0C2BF73D52005AE399 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCE0B2BF73D52005AE399 /* DB.swift */; };
+		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
+		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
+		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
+		FFC976A92BF74CB6004A1BEE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A82BF74CB6004A1BEE /* CoreDataStack.swift */; };
+		FFC976AC2BF74D2B004A1BEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976AB2BF74D2B004A1BEE /* CoreDataManager.swift */; };
+		FFC976AF2BF75729004A1BEE /* LogsRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976AE2BF75729004A1BEE /* LogsRefresher.swift */; };
+		FFC976B12BF757F7004A1BEE /* GetLogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976B02BF757F7004A1BEE /* GetLogsRequest.swift */; };
+		FFC976B32BF75837004A1BEE /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976B22BF75837004A1BEE /* Logs.swift */; };
 		FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */; };
 		FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */; };
 		FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDF33CE2BF3A5FD0070688B /* Assets.xcassets */; };
@@ -116,6 +130,20 @@
 		FF3BCDF92BF67145005AE399 /* OpenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenButton.swift; sourceTree = "<group>"; };
 		FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Open.swift"; sourceTree = "<group>"; };
 		FF3BCDFD2BF67551005AE399 /* OpeningResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningResult.swift; sourceTree = "<group>"; };
+		FF3BCDFF2BF68715005AE399 /* StatisticDiagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDiagram.swift; sourceTree = "<group>"; };
+		FF3BCE012BF6878F005AE399 /* StstisticDiagramColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StstisticDiagramColumn.swift; sourceTree = "<group>"; };
+		FF3BCE042BF68C0D005AE399 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		FF3BCE062BF735F9005AE399 /* MainViewModel+Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Logs.swift"; sourceTree = "<group>"; };
+		FF3BCE082BF73685005AE399 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Week.swift"; sourceTree = "<group>"; };
+		FF3BCE0B2BF73D52005AE399 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
+		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
+		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
+		FFC976A82BF74CB6004A1BEE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FFC976AB2BF74D2B004A1BEE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FFC976AE2BF75729004A1BEE /* LogsRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsRefresher.swift; sourceTree = "<group>"; };
+		FFC976B02BF757F7004A1BEE /* GetLogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLogsRequest.swift; sourceTree = "<group>"; };
+		FFC976B22BF75837004A1BEE /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		FFDF33C22BF3A5FB0070688B /* LockApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDF33C52BF3A5FB0070688B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDF33C72BF3A5FB0070688B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +312,7 @@
 		FF3BCD842BF5325C005AE399 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCE032BF68C00005AE399 /* Date */,
 				FF3BCDED2BF662BB005AE399 /* Double */,
 				FF3BCD8D2BF5394B005AE399 /* CloseKeyboard */,
 				FF3BCD8A2BF53484005AE399 /* StandartBackground */,
@@ -372,6 +401,7 @@
 		FF3BCDA82BF5587C005AE399 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BCE0A2BF73D1A005AE399 /* DB */,
 				FF3BCDA92BF55885005AE399 /* Keychain */,
 				FF3BCD922BF53E84005AE399 /* UserDefaults */,
 			);
@@ -515,6 +545,7 @@
 			children = (
 				FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */,
 				FF3BCDE02BF6491B005AE399 /* DataRefresher.swift */,
+				FFC976AE2BF75729004A1BEE /* LogsRefresher.swift */,
 			);
 			path = Refresher;
 			sourceTree = "<group>";
@@ -535,6 +566,7 @@
 				FF3BCDE82BF65B45005AE399 /* MainViewModel.swift */,
 				FF3BCDF02BF6657D005AE399 /* MainViewModel+Statistic.swift */,
 				FF3BCDFB2BF674B4005AE399 /* MainViewModel+Open.swift */,
+				FF3BCE062BF735F9005AE399 /* MainViewModel+Logs.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -544,6 +576,7 @@
 			children = (
 				FF3BCDEB2BF6610A005AE399 /* MainView.swift */,
 				FF3BCDF92BF67145005AE399 /* OpenButton.swift */,
+				FF3BCDFF2BF68715005AE399 /* StatisticDiagram.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -572,6 +605,8 @@
 			children = (
 				FF3BCDB62BF56275005AE399 /* EmployerModel.swift */,
 				FF3BCDF42BF666A7005AE399 /* Statistic.swift */,
+				FFC976B02BF757F7004A1BEE /* GetLogsRequest.swift */,
+				FFC976B22BF75837004A1BEE /* Logs.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -580,8 +615,87 @@
 			isa = PBXGroup;
 			children = (
 				FF3BCDF72BF67112005AE399 /* OpenButtonState.swift */,
+				FF3BCE012BF6878F005AE399 /* StstisticDiagramColumn.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FF3BCE032BF68C00005AE399 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCE042BF68C0D005AE399 /* Date+String.swift */,
+				FF3BCE082BF73685005AE399 /* Date+Week.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		FF3BCE0A2BF73D1A005AE399 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976A22BF74B58004A1BEE /* CoreData */,
+				FFC9769F2BF741EC004A1BEE /* DefaultModel */,
+				FFC9769E2BF741E4004A1BEE /* Values */,
+				FFC9769D2BF741D1004A1BEE /* Protocol */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCE0B2BF73D52005AE399 /* DB.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FFC9769E2BF741E4004A1BEE /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				FFC9769B2BF74029004A1BEE /* DBValues.swift */,
+			);
+			path = Values;
+			sourceTree = "<group>";
+		};
+		FFC9769F2BF741EC004A1BEE /* DefaultModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976A02BF74216004A1BEE /* EnterDBModel.swift */,
+			);
+			path = DefaultModel;
+			sourceTree = "<group>";
+		};
+		FFC976A22BF74B58004A1BEE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976AA2BF74D09004A1BEE /* Manager */,
+				FFC976A72BF74CA4004A1BEE /* Stack */,
+				FFC976A32BF74BBE004A1BEE /* Model */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FFC976A32BF74BBE004A1BEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFC976A72BF74CA4004A1BEE /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976A82BF74CB6004A1BEE /* CoreDataStack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		FFC976AA2BF74D09004A1BEE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FFC976AB2BF74D2B004A1BEE /* CoreDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		FFDF33B92BF3A5FB0070688B = {
@@ -697,11 +811,15 @@
 				FFDF33C62BF3A5FB0070688B /* AppDelegate.swift in Sources */,
 				FF3BCDAB2BF558BF005AE399 /* Keychain.swift in Sources */,
 				FF3BCDF12BF6657D005AE399 /* MainViewModel+Statistic.swift in Sources */,
+				FF3BCE092BF73685005AE399 /* Date+Week.swift in Sources */,
 				FF3BCDBE2BF5F571005AE399 /* RegistrationView.swift in Sources */,
+				FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */,
+				FF3BCE072BF735F9005AE399 /* MainViewModel+Logs.swift in Sources */,
 				FF3BCD702BF52004005AE399 /* Flow.swift in Sources */,
 				FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */,
 				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
 				FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */,
+				FFC976A92BF74CB6004A1BEE /* CoreDataStack.swift in Sources */,
 				FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */,
 				FF3BCDF82BF67112005AE399 /* OpenButtonState.swift in Sources */,
 				FF3BCD9A2BF5410E005AE399 /* ValidServerResponse.swift in Sources */,
@@ -710,32 +828,42 @@
 				FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
 				FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */,
+				FFC976B32BF75837004A1BEE /* Logs.swift in Sources */,
 				FF3BCD8C2BF5349A005AE399 /* StandartBackgroundWrapper.swift in Sources */,
 				FF3BCDD02BF62467005AE399 /* UpdaterView.swift in Sources */,
+				FF3BCE052BF68C0D005AE399 /* Date+String.swift in Sources */,
 				FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */,
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
 				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,
 				FF3BCD752BF52415005AE399 /* CustomizedTextField.swift in Sources */,
 				FF3BCDB22BF55CDB005AE399 /* TokenRefresher.swift in Sources */,
+				FF3BCE002BF68715005AE399 /* StatisticDiagram.swift in Sources */,
 				FF3BCD802BF52E07005AE399 /* EnterServerView.swift in Sources */,
 				FF3BCD8F2BF53965005AE399 /* CloseKeyboardWrapper.swift in Sources */,
+				FFC976AF2BF75729004A1BEE /* LogsRefresher.swift in Sources */,
 				FF3BCDA22BF550EB005AE399 /* LoadingViewModel.swift in Sources */,
 				FF3BCDDA2BF6386A005AE399 /* PasswordContainer.swift in Sources */,
 				FF3BCDD42BF62D35005AE399 /* ChangePasswordEmail.swift in Sources */,
+				FF3BCE022BF6878F005AE399 /* StstisticDiagramColumn.swift in Sources */,
+				FFC976AC2BF74D2B004A1BEE /* CoreDataManager.swift in Sources */,
 				FF3BCDFE2BF67551005AE399 /* OpeningResult.swift in Sources */,
 				FF3BCDE92BF65B45005AE399 /* MainViewModel.swift in Sources */,
 				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
+				FFC976B12BF757F7004A1BEE /* GetLogsRequest.swift in Sources */,
 				FF3BCDF52BF666A7005AE399 /* Statistic.swift in Sources */,
 				FFDF33C82BF3A5FB0070688B /* SceneDelegate.swift in Sources */,
+				FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */,
 				FF3BCDFA2BF67145005AE399 /* OpenButton.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
 				FF3BCDEF2BF662CD005AE399 /* Double+rounded.swift in Sources */,
 				FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */,
 				FF3BCDDE2BF64380005AE399 /* TabBarMaker.swift in Sources */,
 				FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */,
+				FF3BCE0C2BF73D52005AE399 /* DB.swift in Sources */,
+				FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -951,6 +1079,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFC976A52BF74C09004A1BEE /* db.xcdatamodel */,
+			);
+			currentVersion = FFC976A52BF74C09004A1BEE /* db.xcdatamodel */;
+			name = db.xcdatamodeld;
+			path = "/Users/khramchenko/Desktop/кпи/diplom/code/LockApp/LockApp/Managers/Storage/DB/CoreData/Model/db.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FFDF33BA2BF3A5FB0070688B /* Project object */;
 }

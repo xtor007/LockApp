@@ -24,7 +24,9 @@ class RequestMaker {
     func makePost(_ dataObject: Encodable) throws {
         request?.httpMethod = "POST"
         request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let data = try JSONEncoder().encode(dataObject)
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        let data = try encoder.encode(dataObject)
         request?.httpBody = data
     }
     

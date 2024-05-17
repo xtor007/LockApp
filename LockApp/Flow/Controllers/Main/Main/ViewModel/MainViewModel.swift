@@ -18,10 +18,23 @@ class MainViewModel: ObservableObject {
     
     @Published var alert: AlertItem?
     
-    func didLoad() {
+    @Published var statisticColomns: [StatisticDiagramColumn] = Array(repeating: StatisticDiagramColumn(segments: []), count: 7)
+    @Published var startDate: Date = .now.startOfWeek()
+    @Published var finishDate: Date = .now.endOfWeek()
+    
+    var enters = [EnterDBModel]()
+    
+    // MARK: - Life
+    
+    init() {
+        updateDiagramData()
         updateOnScreenData()
         updateAllData()
     }
+    
+    func didLoad() {}
+    
+    // MARK: Buttons click
     
     func openDoor() {
         openDoorButtonState = .opening
@@ -36,12 +49,34 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    func strollDiagram(_ direction: StatisticScrollDirection) {
+        guard let newStart = formNewDate(startDate, direction: direction),
+              let newFinish = formNewDate(finishDate, direction: direction) else {
+            return
+        }
+        startDate = newStart
+        finishDate = newFinish
+        updateDiagramData()
+    }
+    
+    private func formNewDate(_ date: Date, direction: StatisticScrollDirection) -> Date? {
+        switch direction {
+        case .forward:
+            date.weekForward()
+        case .back:
+            date.weekBack()
+        }
+    }
+    
+    // MARK: - Update
+    
     func updateAllData() {
         isDataLoading = true
         Task {
             do {
                 try await updateUserInfo()
                 try await updateStatistic()
+                try await updateLogs()
                 DispatchQueue.main.async { [weak self] in
                     guard let self else { return }
                     updateOnScreenData()
@@ -67,6 +102,10 @@ class MainViewModel: ObservableObject {
     private func updateOnScreenData() {
         name = UserDefaults.userInfo?.name ?? ""
         average = UserDefaults.averageTime ?? 0
+        enters = DBValues.enters
+            .filter({ $0.employerId == UserDefaults.userInfo?.id })
+            .sorted(by: { $0.time > $1.time })
+        updateDiagramData()
     }
     
     private func updateUserInfo() async throws {
@@ -82,6 +121,26 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    private func updateLogs() async throws {
+        let _: Bool = try await withCheckedThrowingContinuation { continuation in
+            guard let id = UserDefaults.userInfo?.id else {
+                continuation.resume(throwing: MainViewModelError.noId)
+                return
+            }
+            let lastDate = enters.count == 0 ? nil : enters[0].time
+            LogsRefresher(id: id, fromDate: lastDate).refreshData { result in
+                switch result {
+                case .success(_):
+                    continuation.resume(returning: true)
+                case .failure(let failure):
+                    continuation.resume(throwing: failure)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Error
+    
     private func showError(_ error: Error) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
@@ -90,4 +149,8 @@ class MainViewModel: ObservableObject {
         }
     }
     
+}
+
+enum MainViewModelError: Error {
+    case noId
 }
