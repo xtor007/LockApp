@@ -24,6 +24,8 @@ class MainViewModel: ObservableObject {
     
     var enters = [EnterDBModel]()
     
+    weak var showerDelegate: MainShower?
+    
     // MARK: - Life
     
     init() {
@@ -47,6 +49,12 @@ class MainViewModel: ObservableObject {
                 showError(error)
             }
         }
+    }
+    
+    func openLogs() {
+        guard let user = UserDefaults.userInfo else { return }
+        let logsViewModel = LogsViewModel(average: average, user: user, logs: enters)
+        showerDelegate?.showLogsFromMain(logsViewModel)
     }
     
     func strollDiagram(_ direction: StatisticScrollDirection) {

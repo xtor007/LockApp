@@ -54,4 +54,8 @@ enum Texts {
     enum Settings: String {
         case settings = "Settings"
     }
+    enum Logs: String {
+        case noData = "No data available"
+        case logs = "Logs"
+    }
 }

@@ -45,6 +45,9 @@ struct MainView: View {
                 .font(.system(size: 30, weight: .bold))
                 .foregroundStyle(Color(.shadow))
             Spacer()
+            SmallButton(text: Texts.Logs.logs.rawValue) {
+                viewModel.openLogs()
+            }
             UpdaterView(isLoading: $viewModel.isDataLoading) {
                 viewModel.updateAllData()
             }

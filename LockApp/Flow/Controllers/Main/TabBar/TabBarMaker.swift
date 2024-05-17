@@ -5,7 +5,7 @@
 //  Created by Anatoliy Khramchenko on 16.05.2024.
 //
 
-import UIKit
+import SwiftUI
 
 class TabBarMaker {
     
@@ -35,4 +35,17 @@ class TabBarMaker {
         return tabBar
     }
     
+    private func showLogs(from vc: UIViewController?, with viewModel: LogsViewModel) {
+        let logsVC = UIHostingController(rootView: LogsView(viewModel: viewModel))
+        logsVC.hidesBottomBarWhenPushed = true
+        vc?.navigationController?.pushViewController(logsVC, animated: true)
+    }
+    
+}
+
+extension TabBarMaker: MainShower {
+    func showLogsFromMain(_ viewModel: LogsViewModel) {
+        guard tabBar?.selectedIndex == 0 else { return }
+        showLogs(from: mainController, with: viewModel)
+    }
 }

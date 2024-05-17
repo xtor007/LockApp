@@ -183,6 +183,8 @@ extension Flow: RegistrationShowerDelegate {
         let tabBarVC = tabBarMaker.makeTabBar(main: mainVC, admin: adminVC, settings: settingsVC)
         executor.showVC(tabBarVC)
         
+        mainViewModel?.showerDelegate = tabBarMaker
+        
         clearPrepareMemory()
     }
     
