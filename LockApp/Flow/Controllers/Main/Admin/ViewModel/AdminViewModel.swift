@@ -39,6 +39,7 @@ class AdminViewModel: ObservableObject {
     func didAppear() {
         if shoulReloadOnApperar {
             updateEmployers()
+            shoulReloadOnApperar = false
         }
     }
     
