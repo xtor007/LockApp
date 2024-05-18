@@ -27,11 +27,25 @@ class AdminViewModel: ObservableObject {
     
     @Published var alert: AlertItem?
     
+    private var shoulReloadOnApperar = false
+    
     weak var showerDelegate: AdminShowerDelegate?
     
     init() {
         updateUIItems()
         updateEmployers()
+    }
+    
+    func didAppear() {
+        if shoulReloadOnApperar {
+            updateEmployers()
+        }
+    }
+    
+    func openAddNewEmployer() {
+        let department = filter == .all ? nil : filter.text
+        showerDelegate?.showAddNewEmployer(department)
+        shoulReloadOnApperar = true
     }
     
     func openLogs(average: Double, user: EmployerModel) {

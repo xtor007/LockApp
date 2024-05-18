@@ -22,4 +22,5 @@ enum ServerEndpoint: String {
     
     case open = "/open/open"
     case delete = "/command/delete"
+    case add = "/command/add"
 }

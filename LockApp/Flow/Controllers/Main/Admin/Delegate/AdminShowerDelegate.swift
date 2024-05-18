@@ -9,4 +9,5 @@ import Foundation
 
 protocol AdminShowerDelegate: AnyObject {
     func showLogsFromAdmin(_ viewModel: LogsViewModel)
+    func showAddNewEmployer(_ department: String?)
 }

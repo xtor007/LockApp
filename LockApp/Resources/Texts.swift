@@ -27,6 +27,7 @@ enum Texts {
         case logout = "Log out"
         case cancel = "Cancel"
         case delete = "Delete"
+        case add = "Add"
     }
     
     // MARK: - Preparation
@@ -65,5 +66,12 @@ enum Texts {
     enum Logs: String {
         case noData = "No data available"
         case logs = "Logs"
+    }
+    enum Add: String {
+        case email = "Email"
+        case name = "Name"
+        case surname = "Surname"
+        case departmrnt = "Department"
+        case isAdmin = "Is admin?"
     }
 }

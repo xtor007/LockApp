@@ -11,23 +11,29 @@ struct AdminView: View {
     @StateObject var viewModel: AdminViewModel
     
     var body: some View {
-        VStack(spacing: 16) {
-            refresher
-            filters
-            if viewModel.employersToShow.isEmpty {
-                Spacer()
-                Text(Texts.Logs.noData.rawValue)
-                    .font(.system(size: 16))
-                    .foregroundStyle(Color(.grayAccent))
-                Spacer()
-            } else {
-                table
+        ZStack {
+            VStack(spacing: 16) {
+                refresher
+                filters
+                if viewModel.employersToShow.isEmpty {
+                    Spacer()
+                    Text(Texts.Logs.noData.rawValue)
+                        .font(.system(size: 16))
+                        .foregroundStyle(Color(.grayAccent))
+                    Spacer()
+                } else {
+                    table
+                }
             }
+            addButton
         }
+        .padding(.bottom, 1)
         .padding(.horizontal, 16)
-        .padding(.vertical, 20)
         .standartBackground()
         .alertWrapper(alertItem: $viewModel.alert)
+        .onAppear {
+            viewModel.didAppear()
+        }
     }
     
     @ViewBuilder
@@ -96,7 +102,7 @@ struct AdminView: View {
     @ViewBuilder
     func cell(_ employer: EmployerDBModel) -> some View {
         HStack {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text((employer.employer.name ?? "") + " " + (employer.employer.surname ?? ""))
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color(.shadow))
@@ -116,6 +122,30 @@ struct AdminView: View {
             }
             .padding(.trailing, 4)
         }
+    }
+    
+    @ViewBuilder
+    var addButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: {
+                    viewModel.openAddNewEmployer()
+                }, label: {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80)
+                        .foregroundStyle(Color(.accent))
+                        .background {
+                            Circle()
+                                .fill(Color(.background))
+                        }
+                })
+            }
+        }
+        .padding(.vertical, 20)
     }
 }
 

@@ -30,7 +30,7 @@ struct MainView: View {
             footer
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 20)
+        .padding(.bottom, 20)
         .alertWrapper(alertItem: $viewModel.alert)
         .standartBackground()
         .onAppear {
