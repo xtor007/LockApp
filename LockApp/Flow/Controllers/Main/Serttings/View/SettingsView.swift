@@ -40,6 +40,7 @@ struct SettingsView: View {
                 Text(viewModel.department)
                     .font(.system(size: 25, weight: .semibold))
                     .foregroundStyle(Color(.grayAccent))
+                Spacer()
             }
             HStack {
                 Circle()
@@ -48,6 +49,7 @@ struct SettingsView: View {
                 Text(viewModel.email)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color(.grayAccent))
+                Spacer()
             }
         }
         .padding(.horizontal, 16)

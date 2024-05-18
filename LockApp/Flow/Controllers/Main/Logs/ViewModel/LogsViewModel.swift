@@ -72,14 +72,14 @@ class LogsViewModel: ObservableObject {
     
     private func loadLogsFromDB() {
         logs = DBValues.enters
-            .filter({ $0.id == self.id })
+            .filter({ $0.employerId == self.id })
             .sorted(by: { $0.time > $1.time })
     }
     
     private func showError(_ error: Error) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
-            isLoading = true
+            isLoading = false
             alert = AlertContext.errorAlert(error: error)
         }
     }

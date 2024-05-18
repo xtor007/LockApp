@@ -42,4 +42,16 @@ class DBValues {
     static var enters: [EnterDBModel]
     static func addEnters(_ values: [EnterDBModel]) { values.forEach({ _enters.add($0) }) }
     static func deleteEnter(at id: UUID) { _enters.delete(at: id) }
+    
+    @DBValue<EmployerDBModel>(key: .employers, db: CoreDataManager.shared)
+    static var employers: [EmployerDBModel]
+    static func addEmployers(_ values: [EmployerDBModel]) {
+        values.forEach { value in
+            if let id = value.employer.id {
+                _employers.delete(at: id)
+            }
+            _employers.add(value)
+        }
+    }
+    static func deleteEmployer(at id: UUID) { _employers.delete(at: id) }
 }

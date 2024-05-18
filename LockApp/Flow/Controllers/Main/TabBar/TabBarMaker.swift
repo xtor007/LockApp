@@ -43,9 +43,14 @@ class TabBarMaker {
     
 }
 
-extension TabBarMaker: MainShower {
+extension TabBarMaker: MainShower, AdminShowerDelegate {
     func showLogsFromMain(_ viewModel: LogsViewModel) {
         guard tabBar?.selectedIndex == 0 else { return }
         showLogs(from: mainController, with: viewModel)
+    }
+    
+    func showLogsFromAdmin(_ viewModel: LogsViewModel) {
+        guard tabBar?.selectedIndex == 1 else { return }
+        showLogs(from: adminController, with: viewModel)
     }
 }

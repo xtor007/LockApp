@@ -26,6 +26,7 @@ class Flow {
     private var tabBarMaker: TabBarMaker?
     private var mainViewModel: MainViewModel?
     private var settingsViewModel: SettingsViewModel?
+    private var adminViewModel: AdminViewModel?
     
     // MARK: - Life
     
@@ -116,6 +117,7 @@ extension Flow {
         tabBarMaker = nil
         mainViewModel = nil
         settingsViewModel = nil
+        adminViewModel = nil
     }
 }
 
@@ -185,13 +187,14 @@ extension Flow: RegistrationShowerDelegate, SettingsShowerDelegate {
         self.tabBarMaker = tabBarMaker
         
         let mainVC = createMainVC()
-        let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? factory.makeAdminVC() : nil
+        let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? createAdminVC() : nil
         let settingsVC = createSettingsVC(user)
         
         let tabBarVC = tabBarMaker.makeTabBar(main: mainVC, admin: adminVC, settings: settingsVC)
         executor.showVC(tabBarVC)
         
         mainViewModel?.showerDelegate = tabBarMaker
+        adminViewModel?.showerDelegate = tabBarMaker
         
         clearPrepareMemory()
     }
@@ -214,5 +217,12 @@ extension Flow {
         settingsViewModel.showerDelegate = self
         let settingsVC = factory.makeSettingsVC(settingsViewModel)
         return settingsVC
+    }
+    
+    private func createAdminVC() -> UIViewController {
+        let adminViewModel = AdminViewModel()
+        self.adminViewModel = adminViewModel
+        let adminVC = factory.makeAdminVC(adminViewModel)
+        return adminVC
     }
 }

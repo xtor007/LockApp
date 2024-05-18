@@ -67,6 +67,13 @@
 		FFB91AD52BF7CEFD0088762D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AD42BF7CEFD0088762D /* SettingsViewModel.swift */; };
 		FFB91AD82BF7CFDE0088762D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AD72BF7CFDE0088762D /* SettingsView.swift */; };
 		FFB91ADB2BF7D80E0088762D /* SettingsShowerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91ADA2BF7D80E0088762D /* SettingsShowerDelegate.swift */; };
+		FFB91ADD2BF7EE6A0088762D /* EmployerDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91ADC2BF7EE6A0088762D /* EmployerDBModel.swift */; };
+		FFB91ADF2BF7F3A20088762D /* EmployersRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91ADE2BF7F3A20088762D /* EmployersRefresher.swift */; };
+		FFB91AE12BF7F42F0088762D /* Employers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AE02BF7F42F0088762D /* Employers.swift */; };
+		FFB91AE52BF7F6B90088762D /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AE42BF7F6B90088762D /* AdminViewModel.swift */; };
+		FFB91AE82BF7F77D0088762D /* DepartmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AE72BF7F77D0088762D /* DepartmentFilter.swift */; };
+		FFB91AEB2BF7FCE50088762D /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AEA2BF7FCE50088762D /* AdminView.swift */; };
+		FFB91AEE2BF892E10088762D /* AdminShowerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AED2BF892E10088762D /* AdminShowerDelegate.swift */; };
 		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
 		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
 		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
@@ -145,6 +152,13 @@
 		FFB91AD42BF7CEFD0088762D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FFB91AD72BF7CFDE0088762D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB91ADA2BF7D80E0088762D /* SettingsShowerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsShowerDelegate.swift; sourceTree = "<group>"; };
+		FFB91ADC2BF7EE6A0088762D /* EmployerDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDBModel.swift; sourceTree = "<group>"; };
+		FFB91ADE2BF7F3A20088762D /* EmployersRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployersRefresher.swift; sourceTree = "<group>"; };
+		FFB91AE02BF7F42F0088762D /* Employers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employers.swift; sourceTree = "<group>"; };
+		FFB91AE42BF7F6B90088762D /* AdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
+		FFB91AE72BF7F77D0088762D /* DepartmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentFilter.swift; sourceTree = "<group>"; };
+		FFB91AEA2BF7FCE50088762D /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		FFB91AED2BF892E10088762D /* AdminShowerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminShowerDelegate.swift; sourceTree = "<group>"; };
 		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
 		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
 		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
@@ -538,6 +552,7 @@
 		FF3BCDDB2BF6436C005AE399 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91AE22BF7F5670088762D /* Admin */,
 				FFB91AD22BF7CEE00088762D /* Serttings */,
 				FFC976B42BF79CC0004A1BEE /* Logs */,
 				FF3BCDE62BF65B2A005AE399 /* Main */,
@@ -560,6 +575,7 @@
 				FF3BCDB12BF55CDB005AE399 /* TokenRefresher.swift */,
 				FF3BCDE02BF6491B005AE399 /* DataRefresher.swift */,
 				FFC976AE2BF75729004A1BEE /* LogsRefresher.swift */,
+				FFB91ADE2BF7F3A20088762D /* EmployersRefresher.swift */,
 			);
 			path = Refresher;
 			sourceTree = "<group>";
@@ -622,6 +638,7 @@
 				FF3BCDF42BF666A7005AE399 /* Statistic.swift */,
 				FFC976B02BF757F7004A1BEE /* GetLogsRequest.swift */,
 				FFC976B22BF75837004A1BEE /* Logs.swift */,
+				FFB91AE02BF7F42F0088762D /* Employers.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -689,6 +706,49 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		FFB91AE22BF7F5670088762D /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AEC2BF892CE0088762D /* Delegate */,
+				FFB91AE92BF7FCD90088762D /* View */,
+				FFB91AE62BF7F7700088762D /* Model */,
+				FFB91AE32BF7F6A30088762D /* ViewModel */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		FFB91AE32BF7F6A30088762D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AE42BF7F6B90088762D /* AdminViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB91AE62BF7F7700088762D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AE72BF7F77D0088762D /* DepartmentFilter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFB91AE92BF7FCD90088762D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AEA2BF7FCE50088762D /* AdminView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB91AEC2BF892CE0088762D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AED2BF892E10088762D /* AdminShowerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC976A02BF74216004A1BEE /* EnterDBModel.swift */,
+				FFB91ADC2BF7EE6A0088762D /* EmployerDBModel.swift */,
 			);
 			path = DefaultModel;
 			sourceTree = "<group>";
@@ -900,6 +961,7 @@
 				FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */,
 				FF3BCE072BF735F9005AE399 /* MainViewModel+Logs.swift in Sources */,
 				FF3BCD702BF52004005AE399 /* Flow.swift in Sources */,
+				FFB91ADF2BF7F3A20088762D /* EmployersRefresher.swift in Sources */,
 				FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */,
 				FFC976BE2BF7A8FB004A1BEE /* MainShower.swift in Sources */,
 				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
@@ -911,6 +973,7 @@
 				FF3BCDFC2BF674B4005AE399 /* MainViewModel+Open.swift in Sources */,
 				FF3BCDEC2BF6610A005AE399 /* MainView.swift in Sources */,
 				FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */,
+				FFB91AEE2BF892E10088762D /* AdminShowerDelegate.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
 				FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */,
 				FFC976B32BF75837004A1BEE /* Logs.swift in Sources */,
@@ -919,8 +982,11 @@
 				FF3BCE052BF68C0D005AE399 /* Date+String.swift in Sources */,
 				FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */,
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
+				FFB91AE52BF7F6B90088762D /* AdminViewModel.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
 				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,
+				FFB91AE82BF7F77D0088762D /* DepartmentFilter.swift in Sources */,
+				FFB91AE12BF7F42F0088762D /* Employers.swift in Sources */,
 				FFB91AD52BF7CEFD0088762D /* SettingsViewModel.swift in Sources */,
 				FF3BCD752BF52415005AE399 /* CustomizedTextField.swift in Sources */,
 				FF3BCDB22BF55CDB005AE399 /* TokenRefresher.swift in Sources */,
@@ -937,6 +1003,7 @@
 				FF3BCDE92BF65B45005AE399 /* MainViewModel.swift in Sources */,
 				FFC976B72BF79CF3004A1BEE /* LogsViewModel.swift in Sources */,
 				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
+				FFB91AEB2BF7FCE50088762D /* AdminView.swift in Sources */,
 				FF3BCD952BF53EA3005AE399 /* NotificationNames.swift in Sources */,
 				FFB91AD82BF7CFDE0088762D /* SettingsView.swift in Sources */,
 				FF3BCD832BF52EBC005AE399 /* EnterServerViewModel.swift in Sources */,
@@ -952,6 +1019,7 @@
 				FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */,
 				FF3BCE0C2BF73D52005AE399 /* DB.swift in Sources */,
 				FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */,
+				FFB91ADD2BF7EE6A0088762D /* EmployerDBModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

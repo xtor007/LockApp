@@ -17,7 +17,9 @@ enum ServerEndpoint: String {
     
     case info = "/info/"
     case statistic = "/info/statistic"
+    case all = "/info/all"
+    case logs = "/info/logs"
     
     case open = "/open/open"
-    case logs = "/info/logs"
+    case delete = "/command/delete"
 }

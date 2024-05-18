@@ -28,7 +28,7 @@ struct LogsView: View {
     
     @ViewBuilder
     var content: some View {
-        if let logs = viewModel.logs {
+        if let logs = viewModel.logs, !logs.isEmpty {
             table(logs: logs)
         } else {
             Spacer()
@@ -50,7 +50,7 @@ struct LogsView: View {
     
     @ViewBuilder
     func table(logs: [EnterDBModel]) -> some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 Divider()
                 ForEach(0..<logs.count, id: \.self) { index in

@@ -26,6 +26,7 @@ enum Texts {
         case changePassword = "Change password"
         case logout = "Log out"
         case cancel = "Cancel"
+        case delete = "Delete"
     }
     
     // MARK: - Preparation
@@ -55,6 +56,7 @@ enum Texts {
     }
     enum Admin: String {
         case admin = "Admin"
+        case all = "All"
     }
     enum Settings: String {
         case settings = "Settings"

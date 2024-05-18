@@ -8,7 +8,7 @@
 import Foundation
 
 enum DBField {
-    case enters
+    case enters, employers
 }
 
 protocol DB {
@@ -21,6 +21,10 @@ protocol DB {
     func getAllEnters() -> [EnterDBModel]
     func addEnter(_ enter: EnterDBModel)
     func removeEnter(_ id: UUID)
+    
+    func getAllEmployers() -> [EmployerDBModel]
+    func addEmployer(_ employer: EmployerDBModel)
+    func removeEmployer(_ id: UUID)
 }
 
 extension DB {
@@ -28,6 +32,8 @@ extension DB {
         switch field {
         case .enters:
             getAllEnters()
+        case .employers:
+            getAllEmployers()
         }
     }
     
@@ -36,6 +42,9 @@ extension DB {
         case .enters:
             guard let enter = element as? EnterDBModel else { return }
             addEnter(enter)
+        case .employers:
+            guard let employer = element as? EmployerDBModel else { return }
+            addEmployer(employer)
         }
     }
     
@@ -43,6 +52,8 @@ extension DB {
         switch field {
         case .enters:
             removeEnter(id)
+        case .employers:
+            removeEmployer(id)
         }
     }
 }

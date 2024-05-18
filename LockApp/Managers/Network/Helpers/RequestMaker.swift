@@ -11,9 +11,16 @@ class RequestMaker {
     
     private var request: URLRequest?
     
-    func addURL(_ link: String?, endpoint: ServerEndpoint? = nil) throws {
+    func addURL(_ link: String?, endpoint: ServerEndpoint? = nil, query: [String:String] = [:]) throws {
         guard let link else { throw RequestMakerError.noServer }
-        guard let url = URL(string: link + (endpoint?.rawValue ?? "")) else { throw RequestMakerError.failedURL }
+        var fullLink = link + (endpoint?.rawValue ?? "")
+        if !query.isEmpty {
+            fullLink += "?"
+            for param in query.keys {
+                fullLink += param + "=" + (query[param] ?? "")
+            }
+        }
+        guard let url = URL(string: fullLink) else { throw RequestMakerError.failedURL }
         request = URLRequest(url: url)
     }
     

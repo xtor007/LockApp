@@ -39,9 +39,8 @@ class FlowFactory {
         return vc
     }
     
-    func makeAdminVC() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
+    func makeAdminVC(_ viewModel: AdminViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: AdminView(viewModel: viewModel))
         vc.tabBarItem = UITabBarItem(
             title: Texts.Admin.admin.rawValue,
             image: UIImage(systemName: "list.bullet.clipboard.fill"),
