@@ -77,6 +77,8 @@
 		FFB91AF42BF89A080088762D /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF32BF89A080088762D /* AddViewModel.swift */; };
 		FFB91AF72BF89BCA0088762D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF62BF89BCA0088762D /* AddView.swift */; };
 		FFB91AFA2BF89D470088762D /* CheckmarkWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */; };
+		FFB91AFE2C011C480088762D /* PasscodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AFD2C011C480088762D /* PasscodeViewModel.swift */; };
+		FFB91B012C011E100088762D /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B002C011E100088762D /* PasscodeView.swift */; };
 		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
 		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
 		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
@@ -165,6 +167,8 @@
 		FFB91AF32BF89A080088762D /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		FFB91AF62BF89BCA0088762D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkWithText.swift; sourceTree = "<group>"; };
+		FFB91AFD2C011C480088762D /* PasscodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewModel.swift; sourceTree = "<group>"; };
+		FFB91B002C011E100088762D /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
 		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
 		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 		FF3BCD7C2BF52D5F005AE399 /* Preparation */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91AFB2C011C180088762D /* Passcode */,
 				FF3BCDC42BF615C0005AE399 /* ChangePassword */,
 				FF3BCDB82BF5F47B005AE399 /* Registration */,
 				FF3BCD9F2BF550CE005AE399 /* Loading */,
@@ -790,6 +795,31 @@
 			path = Checkmark;
 			sourceTree = "<group>";
 		};
+		FFB91AFB2C011C180088762D /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AFF2C011E030088762D /* View */,
+				FFB91AFC2C011C320088762D /* ViewModel */,
+			);
+			path = Passcode;
+			sourceTree = "<group>";
+		};
+		FFB91AFC2C011C320088762D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91AFD2C011C480088762D /* PasscodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB91AFF2C011E030088762D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B002C011E100088762D /* PasscodeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -1058,6 +1088,8 @@
 				FFB91AFA2BF89D470088762D /* CheckmarkWithText.swift in Sources */,
 				FF3BCDEF2BF662CD005AE399 /* Double+rounded.swift in Sources */,
 				FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */,
+				FFB91AFE2C011C480088762D /* PasscodeViewModel.swift in Sources */,
+				FFB91B012C011E100088762D /* PasscodeView.swift in Sources */,
 				FF3BCDDE2BF64380005AE399 /* TabBarMaker.swift in Sources */,
 				FFB91AF72BF89BCA0088762D /* AddView.swift in Sources */,
 				FF3BCDC82BF6165F005AE399 /* ChangePasswordViewModel.swift in Sources */,

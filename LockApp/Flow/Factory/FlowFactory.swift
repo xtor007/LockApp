@@ -8,6 +8,11 @@
 import SwiftUI
 
 class FlowFactory {
+    func makePasscodeVC(_ viewModel: PasscodeViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: PasscodeView(viewModel: viewModel))
+        return vc
+    }
+    
     func makeEnterServerVC(_ viewModel: EnterServerViewModel) -> UIViewController {
         let vc = UIHostingController(rootView: EnterServerView(viewModel: viewModel))
         return vc

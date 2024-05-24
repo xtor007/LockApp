@@ -10,7 +10,7 @@ import Foundation
 class AuthTokenDistributor {
     func getToken() async throws -> String {
         if let token = KeychainValues.authToken,
-            UserDefaults.expirationDate ?? .distantFuture > .now {
+            UserDefaults.expirationDate ?? .distantPast < .now {
             return token
         }
         let _: Bool = try await withCheckedThrowingContinuation { continuation in

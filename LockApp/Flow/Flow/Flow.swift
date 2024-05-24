@@ -15,6 +15,7 @@ class Flow {
     
     // MARK: - Screens
     
+    private var passcodeViewModel: PasscodeViewModel?
     private var enterServerViewModel: EnterServerViewModel?
     private var loadingViewModel: LoadingViewModel?
     private var registrationViewModel: RegistrationViewModel?
@@ -32,7 +33,7 @@ class Flow {
     
     func start() {
         subscribeToNotifications()
-        changeScreenWhenServerLinkUpdated()
+        showPasscode()
     }
     
     private func subscribeToNotifications() {
@@ -56,7 +57,7 @@ extension Flow {
     
     private func goToRegistrationOrMain() {
         if NetworkMonitor().checkInternetConnectivity() {
-            if UserDefaults.expirationDate ?? .distantFuture > .now {
+            if UserDefaults.expirationDate ?? .distantPast < .now {
                 refreshToken()
             } else {
                 DispatchQueue.main.async { [weak self] in
@@ -124,6 +125,16 @@ extension Flow {
 // MARK: - Show screen
 
 extension Flow: RegistrationShowerDelegate, SettingsShowerDelegate {
+    func showPasscode() {
+        let passcodeViewModel = PasscodeViewModel { [weak self] in
+            guard let self else { return }
+            changeScreenWhenServerLinkUpdated()
+        }
+        self.passcodeViewModel = passcodeViewModel
+        let vc = factory.makePasscodeVC(passcodeViewModel)
+        executor.showVC(vc)
+    }
+    
     func showEnterServer() {
         let enterServerViewModel = self.enterServerViewModel ?? EnterServerViewModel()
         self.enterServerViewModel = enterServerViewModel

@@ -28,9 +28,13 @@ enum Texts {
         case cancel = "Cancel"
         case delete = "Delete"
         case add = "Add"
+        case tryAgain = "Try again"
     }
     
     // MARK: - Preparation
+    enum Passcode: String {
+        case enterPasswordMessage = "Please enter your password"
+    }
     enum EnterServer: String {
         case enterServer = "Enter your company server, please"
     }
