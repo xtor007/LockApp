@@ -79,6 +79,9 @@
 		FFB91AFA2BF89D470088762D /* CheckmarkWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */; };
 		FFB91AFE2C011C480088762D /* PasscodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AFD2C011C480088762D /* PasscodeViewModel.swift */; };
 		FFB91B012C011E100088762D /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B002C011E100088762D /* PasscodeView.swift */; };
+		FFB91B042C01292C0088762D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B032C01292C0088762D /* Theme.swift */; };
+		FFB91B062C01297B0088762D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B052C01297B0088762D /* ThemeManager.swift */; };
+		FFB91B092C012A7C0088762D /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B082C012A7C0088762D /* Selector.swift */; };
 		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
 		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
 		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
@@ -169,6 +172,9 @@
 		FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkWithText.swift; sourceTree = "<group>"; };
 		FFB91AFD2C011C480088762D /* PasscodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewModel.swift; sourceTree = "<group>"; };
 		FFB91B002C011E100088762D /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
+		FFB91B032C01292C0088762D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FFB91B052C01297B0088762D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		FFB91B082C012A7C0088762D /* Selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selector.swift; sourceTree = "<group>"; };
 		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
 		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
 		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 		FF3BCD662BF51F1C005AE399 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91B072C012A6B0088762D /* Selector */,
 				FFB91AF82BF89D350088762D /* Checkmark */,
 				FF3BCDCE2BF6244D005AE399 /* Updater */,
 				FF3BCD792BF52977005AE399 /* ActivityIndicator */,
@@ -252,6 +259,7 @@
 		FF3BCD692BF51F37005AE399 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91B022C0129220088762D /* Theme */,
 				FF3BCDA82BF5587C005AE399 /* Storage */,
 				FF3BCD962BF540D2005AE399 /* Network */,
 				FF3BCD932BF53E8F005AE399 /* Notification */,
@@ -820,6 +828,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FFB91B022C0129220088762D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B032C01292C0088762D /* Theme.swift */,
+				FFB91B052C01297B0088762D /* ThemeManager.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		FFB91B072C012A6B0088762D /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B082C012A7C0088762D /* Selector.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
 		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,6 +1071,7 @@
 				FF3BCDD82BF6374D005AE399 /* ChangePasswordViewModel+Password.swift in Sources */,
 				FFB91AEE2BF892E10088762D /* AdminShowerDelegate.swift in Sources */,
 				FFB91AF42BF89A080088762D /* AddViewModel.swift in Sources */,
+				FFB91B092C012A7C0088762D /* Selector.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
 				FF3BCDD62BF62ECA005AE399 /* ChangePasswordCode.swift in Sources */,
 				FFC976B32BF75837004A1BEE /* Logs.swift in Sources */,
@@ -1085,6 +1111,7 @@
 				FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */,
 				FF3BCDFA2BF67145005AE399 /* OpenButton.swift in Sources */,
 				FF3BCDA72BF5559F005AE399 /* NetworkMonitor.swift in Sources */,
+				FFB91B042C01292C0088762D /* Theme.swift in Sources */,
 				FFB91AFA2BF89D470088762D /* CheckmarkWithText.swift in Sources */,
 				FF3BCDEF2BF662CD005AE399 /* Double+rounded.swift in Sources */,
 				FF3BCDE52BF64E6B005AE399 /* UserDefaultsDataValues.swift in Sources */,
@@ -1097,6 +1124,7 @@
 				FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */,
 				FFB91ADD2BF7EE6A0088762D /* EmployerDBModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
+				FFB91B062C01297B0088762D /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

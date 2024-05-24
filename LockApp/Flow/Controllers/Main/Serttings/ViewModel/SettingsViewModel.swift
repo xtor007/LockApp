@@ -14,6 +14,12 @@ class SettingsViewModel: ObservableObject {
     @Published var email: String
     @Published var department: String
     
+    @Published var theme = ThemeManager.shared.currentTheme {
+        didSet {
+            ThemeManager.shared.currentTheme = theme
+        }
+    }
+    
     @Published var alert: AlertItem?
     
     weak var showerDelegate: SettingsShowerDelegate?

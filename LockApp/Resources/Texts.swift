@@ -66,6 +66,9 @@ enum Texts {
     enum Settings: String {
         case settings = "Settings"
         case failed = "Failed"
+        case lightTheme = "Light"
+        case darkTheme = "Dark"
+        case system = "System"
     }
     enum Logs: String {
         case noData = "No data available"

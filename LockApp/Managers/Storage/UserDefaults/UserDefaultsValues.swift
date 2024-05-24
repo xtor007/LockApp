@@ -49,4 +49,7 @@ extension UserDefaults {
     
     @UserDefaultsValue<Double>(storageKey: "averageTime")
     static var averageTime: Double?
+    
+    @UserDefaultsDataValue<Int>(storageKey: "theme")
+    static var theme: Int?
 }

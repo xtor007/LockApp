@@ -13,6 +13,7 @@ struct SettingsView: View {
     var body: some View {
         VStack(spacing: 20) {
             info
+            Selector(items: Theme.allCases, selectedItem: $viewModel.theme)
             Spacer()
             CustomizedButton(text: Texts.ButtonsTexts.changePassword.rawValue) {
                 viewModel.changePassword()

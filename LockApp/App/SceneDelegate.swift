@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         flow.executor = self
         flow.start()
+        
+        ThemeManager.shared.applyTheme()
     }
 
 }
