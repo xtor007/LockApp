@@ -15,6 +15,8 @@ class TabBarMaker {
     
     private(set) var addController: UIViewController?
     
+    private(set) var userController: UIViewController?
+    
     private(set) var tabBar: UITabBarController?
     
     func makeTabBar(main: UIViewController, admin: UIViewController? = nil, settings: UIViewController) -> UITabBarController {
@@ -45,7 +47,7 @@ class TabBarMaker {
     
 }
 
-extension TabBarMaker: MainShower, AdminShowerDelegate {
+extension TabBarMaker: MainShower, AdminShowerDelegate, UserShower {
     func showAddNewEmployer(_ department: String?) {
         let viewModel = AddViewModel(department: department) { [weak self] in
             guard let self else { return }
@@ -63,8 +65,22 @@ extension TabBarMaker: MainShower, AdminShowerDelegate {
         showLogs(from: mainController, with: viewModel)
     }
     
+    func showUserScreen(_ viewModel: UserViewModel) {
+        guard tabBar?.selectedIndex == 1 else { return }
+        let vc = UIHostingController(rootView: UserView(viewModel: viewModel))
+        viewModel.shower = self
+        vc.hidesBottomBarWhenPushed = true
+        userController = vc
+        adminController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func showLogsFromAdmin(_ viewModel: LogsViewModel) {
         guard tabBar?.selectedIndex == 1 else { return }
         showLogs(from: adminController, with: viewModel)
+    }
+    
+    func dismissUser() {
+        userController?.navigationController?.popViewController(animated: true)
+        userController = nil
     }
 }

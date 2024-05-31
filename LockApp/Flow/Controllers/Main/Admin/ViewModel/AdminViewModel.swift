@@ -41,6 +41,7 @@ class AdminViewModel: ObservableObject {
             updateEmployers()
             shoulReloadOnApperar = false
         }
+        updateUIItems()
     }
     
     func openAddNewEmployer() {
@@ -49,19 +50,9 @@ class AdminViewModel: ObservableObject {
         shoulReloadOnApperar = true
     }
     
-    func openLogs(average: Double, user: EmployerModel) {
-        let viewModel = LogsViewModel(average: average, user: user)
-        showerDelegate?.showLogsFromAdmin(viewModel)
-    }
-    
-    func removeEmployer(id: UUID?) {
-        guard let id else { return }
-        alert = AlertContext.dangerousActionAlert { [weak self] in
-            guard let self else { return }
-            DBValues.deleteEmployer(at: id)
-            deleteOnServer(id)
-            updateUIItems()
-        }
+    func openUser(average: Double, user: EmployerModel) {
+        let viewModel = UserViewModel(user: user, average: average)
+        showerDelegate?.showUserScreen(viewModel)
     }
     
     func updateFilteredData() {
@@ -124,28 +115,6 @@ class AdminViewModel: ObservableObject {
     var average: Double {
         guard employersToShow.count != 0 else { return 0 }
         return employersToShow.reduce(0.0, { $0 + $1.average }) / Double(employersToShow.count)
-    }
-    
-    private func deleteOnServer(_ id: UUID) {
-        isLoading = true
-        Task {
-            do {
-                let token = try await AuthTokenDistributor().getToken()
-                let request = try makeDeleteUserRequest(id: id, token: token)
-                let _: ValidServerResponse = try await NetworkManager().makeRequest(request)
-                updateUIItems()
-            } catch {
-                showError(error)
-            }
-        }
-    }
-    
-    private func makeDeleteUserRequest(id: UUID, token: String) throws -> URLRequest {
-        let maker = RequestMaker()
-        try maker.addURL(UserDefaults.serverLink, endpoint: .delete, query: ["id": id.uuidString])
-        maker.makeGet()
-        maker.addAuthorization(token: token)
-        return try maker.getRequest()
     }
     
     private func showError(_ error: Error) {

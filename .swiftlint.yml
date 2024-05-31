@@ -1,0 +1,29 @@
+line_length: 280
+identifier_name:
+  min_length: # only min_length
+    error: 1 # only error
+    warning: 1
+  excluded: # excluded via string array
+    - ID
+    - id
+    - URL
+    - GlobalAPIKey
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+  allowed_symbols: ["_"] # these are allowed in type names
+disabled_rules:
+  - trailing_whitespace
+  - empty_enum_arguments
+  - opening_brace
+  - unused_closure_parameter
+  - vertical_whitespace
+  - closing_brace
+  - trailing_newline
+  - unused_setter_value
+  - redundant_discardable_let
+  - colon
+  - non_optional_string_data_conversion

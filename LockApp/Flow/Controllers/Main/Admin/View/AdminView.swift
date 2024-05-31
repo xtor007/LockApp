@@ -114,13 +114,11 @@ struct AdminView: View {
                     .foregroundStyle(Color(.grayAccent))
             }
             Spacer()
-            SmallButton(text: Texts.Logs.logs.rawValue) {
-                viewModel.openLogs(average: employer.average, user: employer.employer)
-            }
-            SmallButton(text: Texts.ButtonsTexts.delete.rawValue, accentColor: Color(.bad)) {
-                viewModel.removeEmployer(id: employer.employer.id)
-            }
             .padding(.trailing, 4)
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            viewModel.openUser(average: employer.average, user: employer.employer)
         }
     }
     

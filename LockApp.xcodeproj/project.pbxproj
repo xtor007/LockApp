@@ -82,6 +82,10 @@
 		FFB91B042C01292C0088762D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B032C01292C0088762D /* Theme.swift */; };
 		FFB91B062C01297B0088762D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B052C01297B0088762D /* ThemeManager.swift */; };
 		FFB91B092C012A7C0088762D /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B082C012A7C0088762D /* Selector.swift */; };
+		FFB91B0C2C09A9660088762D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFB91B0B2C09A9660088762D /* .swiftlint.yml */; };
+		FFB91B102C09DCA40088762D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B0F2C09DCA40088762D /* UserViewModel.swift */; };
+		FFB91B132C09DDE20088762D /* UserShower.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B122C09DDE20088762D /* UserShower.swift */; };
+		FFB91B162C09DF880088762D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91B152C09DF880088762D /* UserView.swift */; };
 		FFC9769C2BF74029004A1BEE /* DBValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9769B2BF74029004A1BEE /* DBValues.swift */; };
 		FFC976A12BF74216004A1BEE /* EnterDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A02BF74216004A1BEE /* EnterDBModel.swift */; };
 		FFC976A62BF74C09004A1BEE /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC976A42BF74C09004A1BEE /* db.xcdatamodeld */; };
@@ -175,6 +179,10 @@
 		FFB91B032C01292C0088762D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FFB91B052C01297B0088762D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FFB91B082C012A7C0088762D /* Selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selector.swift; sourceTree = "<group>"; };
+		FFB91B0B2C09A9660088762D /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FFB91B0F2C09DCA40088762D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		FFB91B122C09DDE20088762D /* UserShower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShower.swift; sourceTree = "<group>"; };
+		FFB91B152C09DF880088762D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FFC9769B2BF74029004A1BEE /* DBValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValues.swift; sourceTree = "<group>"; };
 		FFC976A02BF74216004A1BEE /* EnterDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDBModel.swift; sourceTree = "<group>"; };
 		FFC976A52BF74C09004A1BEE /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
@@ -572,6 +580,7 @@
 		FF3BCDDB2BF6436C005AE399 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FFB91B0D2C09DC870088762D /* User */,
 				FFB91AEF2BF899DC0088762D /* Add */,
 				FFB91AE22BF7F5670088762D /* Admin */,
 				FFB91AD22BF7CEE00088762D /* Serttings */,
@@ -845,6 +854,40 @@
 			path = Selector;
 			sourceTree = "<group>";
 		};
+		FFB91B0D2C09DC870088762D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B142C09DF7C0088762D /* View */,
+				FFB91B112C09DDCF0088762D /* Delegate */,
+				FFB91B0E2C09DC940088762D /* ViewModel */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FFB91B0E2C09DC940088762D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B0F2C09DCA40088762D /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB91B112C09DDCF0088762D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B122C09DDE20088762D /* UserShower.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FFB91B142C09DF7C0088762D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB91B152C09DF880088762D /* UserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FFC9769D2BF741D1004A1BEE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -940,6 +983,7 @@
 		FFDF33B92BF3A5FB0070688B = {
 			isa = PBXGroup;
 			children = (
+				FFB91B0B2C09A9660088762D /* .swiftlint.yml */,
 				FFDF33C42BF3A5FB0070688B /* LockApp */,
 				FFDF33C32BF3A5FB0070688B /* Products */,
 			);
@@ -1025,6 +1069,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB91B0C2C09A9660088762D /* .swiftlint.yml in Resources */,
 				FFDF33CF2BF3A5FD0070688B /* Assets.xcassets in Resources */,
 				FFDF33D22BF3A5FD0070688B /* Base in Resources */,
 			);
@@ -1061,6 +1106,7 @@
 				FF3BCD7B2BF5298B005AE399 /* ActivityIndicator.swift in Sources */,
 				FFC976BE2BF7A8FB004A1BEE /* MainShower.swift in Sources */,
 				FF3BCD892BF53301005AE399 /* Texts.swift in Sources */,
+				FFB91B132C09DDE20088762D /* UserShower.swift in Sources */,
 				FF3BCD9E2BF5427F005AE399 /* ServerEndpoints.swift in Sources */,
 				FFC976A92BF74CB6004A1BEE /* CoreDataStack.swift in Sources */,
 				FF3BCD912BF53D63005AE399 /* UserDefaultsValues.swift in Sources */,
@@ -1098,6 +1144,7 @@
 				FF3BCE022BF6878F005AE399 /* StstisticDiagramColumn.swift in Sources */,
 				FFC976AC2BF74D2B004A1BEE /* CoreDataManager.swift in Sources */,
 				FF3BCDFE2BF67551005AE399 /* OpeningResult.swift in Sources */,
+				FFB91B162C09DF880088762D /* UserView.swift in Sources */,
 				FF3BCDE92BF65B45005AE399 /* MainViewModel.swift in Sources */,
 				FFC976B72BF79CF3004A1BEE /* LogsViewModel.swift in Sources */,
 				FF3BCDE32BF649DD005AE399 /* AuthTokenDistributor.swift in Sources */,
@@ -1125,6 +1172,7 @@
 				FFB91ADD2BF7EE6A0088762D /* EmployerDBModel.swift in Sources */,
 				FF3BCDC02BF5F8CD005AE399 /* SmallButton.swift in Sources */,
 				FFB91B062C01297B0088762D /* ThemeManager.swift in Sources */,
+				FFB91B102C09DCA40088762D /* UserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

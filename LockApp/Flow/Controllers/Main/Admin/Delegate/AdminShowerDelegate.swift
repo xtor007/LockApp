@@ -8,6 +8,6 @@
 import Foundation
 
 protocol AdminShowerDelegate: AnyObject {
-    func showLogsFromAdmin(_ viewModel: LogsViewModel)
+    func showUserScreen(_ viewModel: UserViewModel)
     func showAddNewEmployer(_ department: String?)
 }

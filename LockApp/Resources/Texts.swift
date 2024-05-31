@@ -81,4 +81,8 @@ enum Texts {
         case departmrnt = "Department"
         case isAdmin = "Is admin?"
     }
+    enum User: String {
+        case card = "Card"
+        case finger = "Finger"
+    }
 }

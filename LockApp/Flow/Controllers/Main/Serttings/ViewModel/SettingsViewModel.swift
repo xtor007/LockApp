@@ -54,7 +54,8 @@ class SettingsViewModel: ObservableObject {
         let enters = DBValues.enters
         enters.forEach({ DBValues.deleteEnter(at: $0.id) })
         
-        //TODO: Employers
+        let employers = DBValues.employers
+        employers.forEach({ DBValues.deleteEmployer(at: $0.employer.id ?? UUID()) })
     }
     
 }
