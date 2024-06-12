@@ -90,7 +90,9 @@ struct LogsView: View {
             name: "Anatolii",
             surname: "Khramchenko",
             department: "head",
-            email: ""
+            email: "",
+            hasCard: false,
+            hasFinger: false
         ),
         logs: [
             .init(id: UUID(), employerId: UUID(), time: .now, isOn: true),

@@ -20,9 +20,9 @@ struct UserView: View {
                 .foregroundStyle(Color(.grayAccent))
                 .padding(.top, 4)
             Spacer()
-            identifierField(text: Texts.User.card.rawValue, isAdded: true)
+            identifierField(text: Texts.User.card.rawValue, isAdded: viewModel.user.hasCard ?? false)
                 .padding(.bottom, 16)
-            identifierField(text: Texts.User.finger.rawValue, isAdded: false)
+            identifierField(text: Texts.User.finger.rawValue, isAdded: viewModel.user.hasFinger ?? false)
                 .padding(.bottom, 16)
             CustomizedButton(text: Texts.Main.logs.rawValue) {
                 viewModel.showLogs()
@@ -70,5 +70,5 @@ struct UserView: View {
 }
 
 #Preview {
-    UserView(viewModel: .init(user: .init(id: nil, isAdmin: true, name: "Anatolii", surname: "Khramchenko", department: "iOS", email: "test@gmail.com"), average: 0.0))
+    UserView(viewModel: .init(user: .init(id: nil, isAdmin: true, name: "Anatolii", surname: "Khramchenko", department: "iOS", email: "test@gmail.com", hasCard: true, hasFinger: false), average: 0.0))
 }

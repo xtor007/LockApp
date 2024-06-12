@@ -70,6 +70,8 @@ struct SettingsView: View {
         name: "Anatolii",
         surname: "Khramchenko",
         department: "iOS",
-        email: "anatolii@gmail.com"
+        email: "anatolii@gmail.com",
+        hasCard: false,
+        hasFinger: false
     )))
 }

@@ -69,7 +69,9 @@ class AddViewModel: ObservableObject {
             name: name,
             surname: surname,
             department: department,
-            email: email
+            email: email,
+            hasCard: false,
+            hasFinger: false
         ))
         maker.addAuthorization(token: token)
         return try maker.getRequest()

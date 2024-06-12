@@ -79,7 +79,9 @@ class CoreDataManager: DB {
                     name: employer.name,
                     surname: employer.surname,
                     department: employer.department,
-                    email: employer.email
+                    email: employer.email,
+                    hasCard: employer.hasCard,
+                    hasFinger: employer.hasFinger
                 ),
                 average: employer.average
             )
@@ -107,6 +109,8 @@ class CoreDataManager: DB {
             newEmployer.department = employer.employer.department
             newEmployer.email = employer.employer.email
             newEmployer.average = employer.average
+            newEmployer.hasCard = employer.employer.hasCard ?? false
+            newEmployer.hasFinger = employer.employer.hasFinger ?? false
         }
     }
     
