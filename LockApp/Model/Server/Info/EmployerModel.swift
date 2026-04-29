@@ -14,6 +14,6 @@ struct EmployerModel: Codable, Equatable {
     let surname: String?
     let department: String?
     let email: String?
-    let hasCard: Bool?
-    let hasFinger: Bool?
+    var hasCard: Bool?
+    var hasFinger: Bool?
 }

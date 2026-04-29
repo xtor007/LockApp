@@ -9,120 +9,138 @@ import Foundation
 
 class AdminViewModel: ObservableObject {
     
-    @Published var filter = DepartmentFilter.all {
+    @Published var selectedDate = Date() {
         didSet {
-            updateFilteredData()
+            loadAttendanceRisk()
         }
     }
-    @Published var filters = [DepartmentFilter.all]
-    
-    @Published var employersToShow = [EmployerDBModel]()
-    var employers = [EmployerDBModel]() {
-        didSet {
-            updateFilteredData()
-        }
-    }
+    @Published var sortMode: AttendanceRiskSortMode = .worstRisk
+    @Published private(set) var records = [AttendanceRiskDayRecord]()
     
     @Published var isLoading = false
-    
     @Published var alert: AlertItem?
     
-    private var shoulReloadOnApperar = false
+    let sortModes = AttendanceRiskSortMode.allCases
     
+    private var shouldReloadOnAppear = false
+    private var loadTask: Task<Void, Never>?
+
     weak var showerDelegate: AdminShowerDelegate?
     
     init() {
-        updateUIItems()
-        updateEmployers()
+        loadAttendanceRisk()
+    }
+    
+    deinit {
+        loadTask?.cancel()
     }
     
     func didAppear() {
-        if shoulReloadOnApperar {
-            updateEmployers()
-            shoulReloadOnApperar = false
+        if shouldReloadOnAppear {
+            shouldReloadOnAppear = false
+            loadAttendanceRisk()
         }
-        updateUIItems()
     }
     
     func openAddNewEmployer() {
-        let department = filter == .all ? nil : filter.text
-        showerDelegate?.showAddNewEmployer(department)
-        shoulReloadOnApperar = true
+        showerDelegate?.showAddNewEmployer(nil)
+        shouldReloadOnAppear = true
     }
     
-    func openUser(average: Double, user: EmployerModel) {
-        let viewModel = UserViewModel(user: user, average: average)
-        showerDelegate?.showUserScreen(viewModel)
+    func openStatistics(for record: AttendanceRiskDayRecord) {
+        let viewModel = AttendanceUserStatisticsViewModel(user: record.user) { [weak self] in
+            self?.shouldReloadOnAppear = true
+        }
+        viewModel.showerDelegate = showerDelegate
+        showerDelegate?.showAttendanceUserStatistics(viewModel)
     }
     
-    func updateFilteredData() {
-        switch filter {
-        case .all:
-            employersToShow = employers
-        case .other(let department):
-            employersToShow = employers.filter({ $0.employer.department == department })
+    func updateAttendanceRisk() {
+        loadAttendanceRisk()
+    }
+    
+    var recordsToShow: [AttendanceRiskDayRecord] {
+        switch sortMode {
+        case .worstRisk:
+            return records.sorted(by: { lhs, rhs in
+                sortByRisk(lhs: lhs, rhs: rhs, descending: true)
+            })
+        case .bestRisk:
+            return records.sorted(by: { lhs, rhs in
+                sortByRisk(lhs: lhs, rhs: rhs, descending: false)
+            })
+        case .alphabetically:
+            return records.sorted(by: { $0.user.alphabeticalKey < $1.user.alphabeticalKey })
         }
     }
     
-    func updateEmployers() {
+    var selectedDateTitle: String {
+        AttendanceRiskFormatter.displayDay(selectedDate)
+    }
+    
+    private func loadAttendanceRisk() {
+        let day = AttendanceRiskFormatter.apiDay(selectedDate)
+        loadTask?.cancel()
         isLoading = true
-        Task {
+        
+        loadTask = Task { [weak self] in
+            guard let self else { return }
             do {
-                try await refreshData()
-                updateUIItems()
+                let response = try await fetchAttendanceRisk(day: day)
+                guard !Task.isCancelled else { return }
+                await MainActor.run {
+                    self.records = response.items
+                    self.isLoading = false
+                }
+            } catch is CancellationError {
+                ()
             } catch {
-                showError(error)
-            }
-        }
-    }
-    
-    private func refreshData() async throws {
-        let _: Bool = try await withCheckedThrowingContinuation { contonuation in
-            EmployersRefresher().refreshData { result in
-                switch result {
-                case .success(_):
-                    contonuation.resume(returning: true)
-                case .failure(let failure):
-                    contonuation.resume(throwing: failure)
+                guard !Task.isCancelled else { return }
+                await MainActor.run {
+                    self.showError(error)
                 }
             }
         }
     }
     
-    private func updateUIItems() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            isLoading = false
-            employers = DBValues.employers
-                .sorted(by: { ($0.employer.surname ?? "") < ($1.employer.surname ?? "") })
-            filters = [.all] + departments.map({ .other($0) })
-            if !filters.contains(where: { $0 == self.filter }) {
-                filter = .all
+    private func fetchAttendanceRisk(day: String) async throws -> AttendanceRiskDayResponse {
+        let token = try await AuthTokenDistributor().getToken()
+        let request = try makeAttendanceRiskRequest(day: day, token: token)
+        return try await NetworkManager().makeRequest(request)
+    }
+    
+    private func makeAttendanceRiskRequest(day: String, token: String) throws -> URLRequest {
+        let maker = RequestMaker()
+        try maker.addURL(
+            UserDefaults.serverLink,
+            endpoint: .attendanceRiskDay,
+            pathComponents: [day]
+        )
+        maker.makeGet()
+        maker.addAuthorization(token: token)
+        return try maker.getRequest()
+    }
+    
+    private func sortByRisk(lhs: AttendanceRiskDayRecord, rhs: AttendanceRiskDayRecord, descending: Bool) -> Bool {
+        switch (lhs.riskScore, rhs.riskScore) {
+        case let (leftRisk?, rightRisk?):
+            if leftRisk != rightRisk {
+                return descending ? leftRisk > rightRisk : leftRisk < rightRisk
             }
-            updateFilteredData()
+        case (_?, nil):
+            return true
+        case (nil, _?):
+            return false
+        case (nil, nil):
+            break
         }
-    }
-    
-    private var departments: [String] {
-        var departments = Set<String>()
-        employers.forEach({ employer in
-            guard let department = employer.employer.department else { return }
-            departments.insert(department)
-        })
-        return departments.sorted()
-    }
-    
-    var average: Double {
-        guard employersToShow.count != 0 else { return 0 }
-        return employersToShow.reduce(0.0, { $0 + $1.average }) / Double(employersToShow.count)
+        
+        return lhs.user.alphabeticalKey < rhs.user.alphabeticalKey
     }
     
     private func showError(_ error: Error) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            isLoading = false
-            alert = AlertContext.errorAlert(error: error)
-        }
+        isLoading = false
+        alert = AlertContext.errorAlert(error: error)
     }
     
 }

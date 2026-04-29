@@ -11,11 +11,18 @@ struct SmallButton: View {
     let text: String
     let onTap: () -> Void
     let accentColor: Color
+    let accessibilityIdentifier: String?
     
-    init(text: String, accentColor: Color = Color(.accent), onTap: @escaping () -> Void) {
+    init(
+        text: String,
+        accentColor: Color = Color(.accent),
+        accessibilityIdentifier: String? = nil,
+        onTap: @escaping () -> Void
+    ) {
         self.text = text
         self.onTap = onTap
         self.accentColor = accentColor
+        self.accessibilityIdentifier = accessibilityIdentifier
     }
     
     var body: some View {
@@ -37,6 +44,10 @@ struct SmallButton: View {
                     .shadow(color: Color(.shadow), radius: 5)
             }
         })
+        .contentShape(Capsule())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(text)
+        .accessibilityIdentifier(accessibilityIdentifier ?? text)
     }
 }
 

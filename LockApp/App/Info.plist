@@ -4,6 +4,8 @@
 <dict>
     <key>NSFaceIDUsageDescription</key>
     <string>To ensure access only to the owner of the phone</string>
+    <key>UIDesignRequiresCompatibility</key>
+    <true/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

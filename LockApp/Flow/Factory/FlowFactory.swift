@@ -54,6 +54,10 @@ class FlowFactory {
         return vc
     }
     
+    func makeAttendanceUserStatisticsVC(_ viewModel: AttendanceUserStatisticsViewModel) -> UIViewController {
+        UIHostingController(rootView: AttendanceUserStatisticsView(viewModel: viewModel))
+    }
+    
     func makeSettingsVC(_ viewModel: SettingsViewModel) -> UIViewController {
         let vc = UIHostingController(rootView: SettingsView(viewModel: viewModel))
         vc.tabBarItem = UITabBarItem(

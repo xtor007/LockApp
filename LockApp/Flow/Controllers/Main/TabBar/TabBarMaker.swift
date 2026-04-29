@@ -9,6 +9,8 @@ import SwiftUI
 
 class TabBarMaker {
     
+    private let factory = FlowFactory()
+    
     private(set) var mainController: UIViewController?
     private(set) var adminController: UIViewController?
     private(set) var settingsController: UIViewController?
@@ -71,6 +73,14 @@ extension TabBarMaker: MainShower, AdminShowerDelegate, UserShower {
         viewModel.shower = self
         vc.hidesBottomBarWhenPushed = true
         userController = vc
+        adminController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showAttendanceUserStatistics(_ viewModel: AttendanceUserStatisticsViewModel) {
+        guard tabBar?.selectedIndex == 1 else { return }
+        let vc = factory.makeAttendanceUserStatisticsVC(viewModel)
+        viewModel.showerDelegate = self
+        vc.hidesBottomBarWhenPushed = true
         adminController?.navigationController?.pushViewController(vc, animated: true)
     }
     

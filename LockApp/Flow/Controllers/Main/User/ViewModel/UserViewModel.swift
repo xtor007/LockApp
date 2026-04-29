@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class UserViewModel: ObservableObject {
     
@@ -34,6 +35,34 @@ class UserViewModel: ObservableObject {
             guard let self else { return }
             DBValues.deleteEmployer(at: id)
             deleteOnServer(id)
+        }
+    }
+  
+    func removeCard() {
+        alert = AlertContext.dangerousActionAlert { [weak self] in
+            self?.user.hasCard = false
+        }
+    }
+    
+    func removeFinger() {
+        alert = AlertContext.dangerousActionAlert { [weak self] in
+            self?.user.hasFinger = false
+        }
+    }
+    
+    func addCard() {
+        alert = AlertItem(title: Text("Add identifier"), message: Text("To add an ID, hold it close to the sensor for 3 minutes. Wait for confirmation.")) // TODO: Hardcode
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            self?.alert = AlertItem(title: Text("Success"), message: Text("Good"), dismissButton: .cancel()) // TODO: Hardcode
+            self?.user.hasCard = true
+        }
+    }
+    
+    func addFinger() {
+        alert = AlertItem(title: Text("Add identifier"), message: Text("To add an ID, hold it close to the sensor for 3 minutes. Wait for confirmation.")) // TODO: Hardcode
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            self?.alert = AlertItem(title: Text("Success"), message: Text("Good"), dismissButton: .cancel()) // TODO: Hardcode
+            self?.user.hasFinger = true
         }
     }
     

@@ -20,9 +20,9 @@ struct UserView: View {
                 .foregroundStyle(Color(.grayAccent))
                 .padding(.top, 4)
             Spacer()
-            identifierField(text: Texts.User.card.rawValue, isAdded: viewModel.user.hasCard ?? false)
+            identifierField(text: Texts.User.card.rawValue, isAdded: viewModel.user.hasCard ?? false, removeAction: viewModel.removeCard, addAction: viewModel.addCard)
                 .padding(.bottom, 16)
-            identifierField(text: Texts.User.finger.rawValue, isAdded: viewModel.user.hasFinger ?? false)
+            identifierField(text: Texts.User.finger.rawValue, isAdded: viewModel.user.hasFinger ?? false, removeAction: viewModel.removeFinger, addAction: viewModel.addFinger)
                 .padding(.bottom, 16)
             CustomizedButton(text: Texts.Main.logs.rawValue) {
                 viewModel.showLogs()
@@ -43,7 +43,7 @@ struct UserView: View {
     }
     
     @ViewBuilder
-    func identifierField(text: String, isAdded: Bool) -> some View {
+    func identifierField(text: String, isAdded: Bool, removeAction: @escaping () -> Void, addAction: @escaping () -> Void) -> some View {
         HStack {
             Text(text)
                 .font(.system(size: 20, weight: .semibold))
@@ -51,11 +51,11 @@ struct UserView: View {
             Spacer()
             if isAdded {
                 SmallButton(text: Texts.ButtonsTexts.delete.rawValue, accentColor: .bad) {
-                    ()
+                    removeAction()
                 }
             } else {
                 SmallButton(text: Texts.ButtonsTexts.add.rawValue) {
-                    ()
+                    addAction()
                 }
             }
         }

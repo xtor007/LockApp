@@ -11,16 +11,34 @@ class RequestMaker {
     
     private var request: URLRequest?
     
-    func addURL(_ link: String?, endpoint: ServerEndpoint? = nil, query: [String:String] = [:]) throws {
+    func addURL(
+        _ link: String?,
+        endpoint: ServerEndpoint? = nil,
+        pathComponents: [String] = [],
+        query: [String:String] = [:]
+    ) throws {
         guard let link else { throw RequestMakerError.noServer }
-        var fullLink = link + (endpoint?.rawValue ?? "")
-        if !query.isEmpty {
-            fullLink += "?"
-            for param in query.keys {
-                fullLink += param + "=" + (query[param] ?? "")
+        let normalizedLink = normalizeBaseLink(link)
+        guard var components = URLComponents(string: normalizedLink + (endpoint?.rawValue ?? "")) else {
+            throw RequestMakerError.failedURL
+        }
+        
+        if !pathComponents.isEmpty {
+            let pathSuffix = pathComponents.joined(separator: "/")
+            if components.path.hasSuffix("/") {
+                components.path += pathSuffix
+            } else {
+                components.path += "/" + pathSuffix
             }
         }
-        guard let url = URL(string: fullLink) else { throw RequestMakerError.failedURL }
+        
+        if !query.isEmpty {
+            components.queryItems = query
+                .sorted(by: { $0.key < $1.key })
+                .map({ URLQueryItem(name: $0.key, value: $0.value) })
+        }
+        
+        guard let url = components.url else { throw RequestMakerError.failedURL }
         request = URLRequest(url: url)
     }
     
@@ -55,6 +73,15 @@ class RequestMaker {
         return request
     }
     
+}
+
+private extension RequestMaker {
+    func normalizeBaseLink(_ link: String) -> String {
+        let trimmedLink = link.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedLink.isEmpty else { return trimmedLink }
+        guard URLComponents(string: trimmedLink)?.scheme == nil else { return trimmedLink }
+        return "http://\(trimmedLink)"
+    }
 }
 
 enum RequestMakerError: Error {
