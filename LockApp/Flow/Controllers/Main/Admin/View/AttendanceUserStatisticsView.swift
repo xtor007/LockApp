@@ -124,9 +124,9 @@ struct AttendanceUserStatisticsView: View {
                 Text(Texts.Attendance.externalFactors.rawValue)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(Color(.shadow))
-                factorRow(Texts.Attendance.traffic.rawValue, AttendanceRiskFormatter.percent(result.detailsJson.trafficScore))
-                factorRow(Texts.Attendance.power.rawValue, AttendanceRiskFormatter.percent(result.detailsJson.powerScore))
-                factorRow(Texts.Attendance.weather.rawValue, AttendanceRiskFormatter.percent(result.detailsJson.weatherScore))
+                factorRow(Texts.Attendance.traffic.rawValue, AttendanceRiskFormatter.scoreOutOfTen(result.detailsJson.trafficScore))
+                factorRow(Texts.Attendance.power.rawValue, AttendanceRiskFormatter.scoreOutOfTen(result.detailsJson.powerScore))
+                factorRow(Texts.Attendance.weather.rawValue, AttendanceRiskFormatter.scoreOutOfTen(result.detailsJson.weatherScore))
                 if let weatherContext = AttendanceRiskFormatter.weatherContext(result.detailsJson.weatherContext) {
                     factorRow(Texts.Attendance.weatherContext.rawValue, weatherContext)
                 }

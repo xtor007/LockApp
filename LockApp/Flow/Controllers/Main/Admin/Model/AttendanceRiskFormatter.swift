@@ -42,6 +42,15 @@ enum AttendanceRiskFormatter {
         let percentValue = Int((value * 100).rounded())
         return "\(percentValue)%"
     }
+
+    static func scoreOutOfTen(_ value: Double?) -> String {
+        guard let value else { return Texts.Attendance.emptyValue.rawValue }
+        let normalizedValue = value.rounded(toPlaces: 1)
+        if normalizedValue == floor(normalizedValue) {
+            return "\(Int(normalizedValue))/10"
+        }
+        return "\(normalizedValue)/10"
+    }
     
     static func percentInput(_ value: Double?) -> String {
         guard let value else { return "" }
