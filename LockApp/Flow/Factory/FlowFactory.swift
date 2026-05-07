@@ -61,6 +61,16 @@ class FlowFactory {
     func makeAttendanceRiskVisualizationVC(_ viewModel: AttendanceRiskVisualizationViewModel) -> UIViewController {
         UIHostingController(rootView: AttendanceRiskVisualizationView(viewModel: viewModel))
     }
+
+    func makeAttendanceDepartmentHistogramVC(_ viewModel: AttendanceDepartmentHistogramViewModel) -> UIViewController {
+        let vc = UIHostingController(rootView: AttendanceDepartmentHistogramView(viewModel: viewModel))
+        vc.tabBarItem = UITabBarItem(
+            title: Texts.Attendance.histogramTab.rawValue,
+            image: UIImage(systemName: "chart.bar.xaxis"),
+            tag: 0
+        )
+        return vc
+    }
     
     func makeSettingsVC(_ viewModel: SettingsViewModel) -> UIViewController {
         let vc = UIHostingController(rootView: SettingsView(viewModel: viewModel))

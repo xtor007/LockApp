@@ -54,7 +54,7 @@ class AdminViewModel: ObservableObject {
         viewModel.showerDelegate = showerDelegate
         showerDelegate?.showAttendanceUserStatistics(viewModel)
     }
-    
+
     func updateAttendanceRisk() {
         loadAttendanceRisk()
     }

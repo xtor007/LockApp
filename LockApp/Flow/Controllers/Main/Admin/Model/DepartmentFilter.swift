@@ -7,13 +7,22 @@
 
 import Foundation
 
-enum DepartmentFilter: Equatable {
+enum DepartmentFilter: Hashable, Identifiable {
     case all, other(String)
+
+    var id: String {
+        switch self {
+        case .all:
+            return "all"
+        case .other(let string):
+            return "department-\(string.lowercased())"
+        }
+    }
     
     var text: String {
         switch self {
         case .all:
-            Texts.Admin.all.rawValue
+            Texts.Attendance.allDepartments.rawValue
         case .other(let string):
             string
         }

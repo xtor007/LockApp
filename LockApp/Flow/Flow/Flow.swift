@@ -28,6 +28,7 @@ class Flow {
     private var mainViewModel: MainViewModel?
     private var settingsViewModel: SettingsViewModel?
     private var adminViewModel: AdminViewModel?
+    private var departmentHistogramViewModel: AttendanceDepartmentHistogramViewModel?
     
     // MARK: - Life
     
@@ -119,6 +120,7 @@ extension Flow {
         mainViewModel = nil
         settingsViewModel = nil
         adminViewModel = nil
+        departmentHistogramViewModel = nil
     }
 }
 
@@ -199,9 +201,15 @@ extension Flow: RegistrationShowerDelegate, SettingsShowerDelegate {
         
         let mainVC = createMainVC()
         let adminVC = (UserDefaults.userInfo?.isAdmin ?? false) ? createAdminVC() : nil
+        let departmentHistogramVC = (UserDefaults.userInfo?.isAdmin ?? false) ? createDepartmentHistogramVC() : nil
         let settingsVC = createSettingsVC(user)
         
-        let tabBarVC = tabBarMaker.makeTabBar(main: mainVC, admin: adminVC, settings: settingsVC)
+        let tabBarVC = tabBarMaker.makeTabBar(
+            main: mainVC,
+            admin: adminVC,
+            departmentHistogram: departmentHistogramVC,
+            settings: settingsVC
+        )
         executor.showVC(tabBarVC)
         
         mainViewModel?.showerDelegate = tabBarMaker
@@ -235,5 +243,12 @@ extension Flow {
         self.adminViewModel = adminViewModel
         let adminVC = factory.makeAdminVC(adminViewModel)
         return adminVC
+    }
+
+    private func createDepartmentHistogramVC() -> UIViewController {
+        let departmentHistogramViewModel = AttendanceDepartmentHistogramViewModel()
+        self.departmentHistogramViewModel = departmentHistogramViewModel
+        let departmentHistogramVC = factory.makeAttendanceDepartmentHistogramVC(departmentHistogramViewModel)
+        return departmentHistogramVC
     }
 }

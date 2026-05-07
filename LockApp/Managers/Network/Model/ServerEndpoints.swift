@@ -25,6 +25,8 @@ enum ServerEndpoint: String {
     case add = "/command/add"
     
     case attendanceRiskDay = "/internal/attendance-analysis/risk/day"
+    case attendanceRiskDepartments = "/internal/attendance-analysis/risk/departments"
+    case attendanceRiskHistogram = "/internal/attendance-analysis/risk/histogram"
     case attendanceUsers = "/internal/attendance-analysis/users"
     case attendanceMLPFeedback = "/internal/attendance-analysis/mlp/feedback"
 }

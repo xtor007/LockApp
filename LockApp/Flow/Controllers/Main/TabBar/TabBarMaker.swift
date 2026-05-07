@@ -13,6 +13,7 @@ class TabBarMaker {
     
     private(set) var mainController: UIViewController?
     private(set) var adminController: UIViewController?
+    private(set) var departmentHistogramController: UIViewController?
     private(set) var settingsController: UIViewController?
     
     private(set) var addController: UIViewController?
@@ -21,7 +22,12 @@ class TabBarMaker {
     
     private(set) var tabBar: UITabBarController?
     
-    func makeTabBar(main: UIViewController, admin: UIViewController? = nil, settings: UIViewController) -> UITabBarController {
+    func makeTabBar(
+        main: UIViewController,
+        admin: UIViewController? = nil,
+        departmentHistogram: UIViewController? = nil,
+        settings: UIViewController
+    ) -> UITabBarController {
         var tabBarControllers = [UIViewController]()
         
         mainController = main
@@ -29,6 +35,10 @@ class TabBarMaker {
         if let admin {
             adminController = admin
             tabBarControllers.append(UINavigationController(rootViewController: admin))
+        }
+        if let departmentHistogram {
+            departmentHistogramController = departmentHistogram
+            tabBarControllers.append(UINavigationController(rootViewController: departmentHistogram))
         }
         settingsController = settings
         tabBarControllers.append(UINavigationController(rootViewController: settings))
@@ -90,7 +100,6 @@ extension TabBarMaker: MainShower, AdminShowerDelegate, UserShower {
         vc.hidesBottomBarWhenPushed = true
         adminController?.navigationController?.pushViewController(vc, animated: true)
     }
-    
     func showLogsFromAdmin(_ viewModel: LogsViewModel) {
         guard tabBar?.selectedIndex == 1 else { return }
         showLogs(from: adminController, with: viewModel)
