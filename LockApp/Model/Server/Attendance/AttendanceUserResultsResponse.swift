@@ -47,6 +47,12 @@ struct AttendanceUserResult: Codable, Equatable {
     var workDeltaMinutes: Int {
         workedMinutes - workNormMinutes
     }
+
+    var isStableNormal: Bool {
+        status == "clustering_terminal_stable_normal" ||
+            clusteringStatus == "stable_normal_terminal" ||
+            clusterName?.caseInsensitiveCompare("Stable Normal") == .orderedSame
+    }
 }
 
 struct AttendanceAnalysisDetails: Codable, Equatable {

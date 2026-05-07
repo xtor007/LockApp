@@ -38,6 +38,10 @@ class AttendanceUserStatisticsViewModel: ObservableObject {
     var canOpenUserManagement: Bool {
         managedEmployer != nil
     }
+
+    var canOpenVisualization: Bool {
+        results.isEmpty == false
+    }
     
     func loadResults() {
         loadTask?.cancel()
@@ -68,6 +72,12 @@ class AttendanceUserStatisticsViewModel: ObservableObject {
         guard let managedEmployer else { return }
         let viewModel = UserViewModel(user: managedEmployer.employer, average: managedEmployer.average)
         showerDelegate?.showUserScreen(viewModel)
+    }
+
+    func openVisualization() {
+        guard canOpenVisualization else { return }
+        let viewModel = AttendanceRiskVisualizationViewModel(user: user, results: results)
+        showerDelegate?.showAttendanceRiskVisualization(viewModel)
     }
     
     func submitCorrection(for result: AttendanceUserResult, etaValue: Double, onSuccess: @escaping () -> Void) {

@@ -83,6 +83,13 @@ extension TabBarMaker: MainShower, AdminShowerDelegate, UserShower {
         vc.hidesBottomBarWhenPushed = true
         adminController?.navigationController?.pushViewController(vc, animated: true)
     }
+
+    func showAttendanceRiskVisualization(_ viewModel: AttendanceRiskVisualizationViewModel) {
+        guard tabBar?.selectedIndex == 1 else { return }
+        let vc = factory.makeAttendanceRiskVisualizationVC(viewModel)
+        vc.hidesBottomBarWhenPushed = true
+        adminController?.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func showLogsFromAdmin(_ viewModel: LogsViewModel) {
         guard tabBar?.selectedIndex == 1 else { return }

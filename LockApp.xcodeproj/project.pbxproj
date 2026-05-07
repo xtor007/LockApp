@@ -81,6 +81,8 @@
 		A1B2C3052E1000010088762D /* AttendanceMLPFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3152E1000010088762D /* AttendanceMLPFeedback.swift */; };
 		A1B2C3062E1000010088762D /* AttendanceUserStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3162E1000010088762D /* AttendanceUserStatisticsViewModel.swift */; };
 		A1B2C3072E1000010088762D /* AttendanceUserStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3172E1000010088762D /* AttendanceUserStatisticsView.swift */; };
+		A1B2C3082E1100010088762D /* AttendanceRiskVisualizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3182E1100010088762D /* AttendanceRiskVisualizationViewModel.swift */; };
+		A1B2C3092E1100010088762D /* AttendanceRiskVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3192E1100010088762D /* AttendanceRiskVisualizationView.swift */; };
 		FFB91AF42BF89A080088762D /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF32BF89A080088762D /* AddViewModel.swift */; };
 		FFB91AF72BF89BCA0088762D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF62BF89BCA0088762D /* AddView.swift */; };
 		FFB91AFA2BF89D470088762D /* CheckmarkWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */; };
@@ -185,6 +187,8 @@
 		A1B2C3152E1000010088762D /* AttendanceMLPFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance/AttendanceMLPFeedback.swift; sourceTree = "<group>"; };
 		A1B2C3162E1000010088762D /* AttendanceUserStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceUserStatisticsViewModel.swift; sourceTree = "<group>"; };
 		A1B2C3172E1000010088762D /* AttendanceUserStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceUserStatisticsView.swift; sourceTree = "<group>"; };
+		A1B2C3182E1100010088762D /* AttendanceRiskVisualizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRiskVisualizationViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3192E1100010088762D /* AttendanceRiskVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRiskVisualizationView.swift; sourceTree = "<group>"; };
 		FFB91AF32BF89A080088762D /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		FFB91AF62BF89BCA0088762D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		FFB91AF92BF89D470088762D /* CheckmarkWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkWithText.swift; sourceTree = "<group>"; };
@@ -768,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB91AE42BF7F6B90088762D /* AdminViewModel.swift */,
+				A1B2C3182E1100010088762D /* AttendanceRiskVisualizationViewModel.swift */,
 				A1B2C3162E1000010088762D /* AttendanceUserStatisticsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -787,6 +792,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB91AEA2BF7FCE50088762D /* AdminView.swift */,
+				A1B2C3192E1100010088762D /* AttendanceRiskVisualizationView.swift */,
 				A1B2C3172E1000010088762D /* AttendanceUserStatisticsView.swift */,
 			);
 			path = View;
@@ -1142,6 +1148,7 @@
 				A1B2C3032E1000010088762D /* AttendanceRiskDayResponse.swift in Sources */,
 				FFB91AF42BF89A080088762D /* AddViewModel.swift in Sources */,
 				A1B2C3072E1000010088762D /* AttendanceUserStatisticsView.swift in Sources */,
+				A1B2C3092E1100010088762D /* AttendanceRiskVisualizationView.swift in Sources */,
 				FFB91B092C012A7C0088762D /* Selector.swift in Sources */,
 				A1B2C3022E1000010088762D /* AttendanceRiskFormatter.swift in Sources */,
 				FF3BCD9C2BF54142005AE399 /* RequestMaker.swift in Sources */,
@@ -1153,6 +1160,7 @@
 				FF3BCDC32BF609D8005AE399 /* RegistrationShowerDelegate.swift in Sources */,
 				FF3BCDAD2BF55962005AE399 /* KeychainValues.swift in Sources */,
 				FFB91AE52BF7F6B90088762D /* AdminViewModel.swift in Sources */,
+				A1B2C3082E1100010088762D /* AttendanceRiskVisualizationViewModel.swift in Sources */,
 				A1B2C3062E1000010088762D /* AttendanceUserStatisticsViewModel.swift in Sources */,
 				FF3BCD6E2BF51FD5005AE399 /* FlowExecutor.swift in Sources */,
 				FF3BCD982BF540E0005AE399 /* NetworkManager.swift in Sources */,

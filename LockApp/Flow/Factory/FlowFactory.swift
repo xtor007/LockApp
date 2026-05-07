@@ -57,6 +57,10 @@ class FlowFactory {
     func makeAttendanceUserStatisticsVC(_ viewModel: AttendanceUserStatisticsViewModel) -> UIViewController {
         UIHostingController(rootView: AttendanceUserStatisticsView(viewModel: viewModel))
     }
+
+    func makeAttendanceRiskVisualizationVC(_ viewModel: AttendanceRiskVisualizationViewModel) -> UIViewController {
+        UIHostingController(rootView: AttendanceRiskVisualizationView(viewModel: viewModel))
+    }
     
     func makeSettingsVC(_ viewModel: SettingsViewModel) -> UIViewController {
         let vc = UIHostingController(rootView: SettingsView(viewModel: viewModel))

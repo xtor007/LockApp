@@ -27,6 +27,10 @@ enum AttendanceRiskFormatter {
     static func apiDay(_ date: Date) -> String {
         apiDayFormatter.string(from: date)
     }
+
+    static func date(fromApiDay day: String) -> Date? {
+        apiDayFormatter.date(from: day)
+    }
     
     static func displayDay(_ date: Date) -> String {
         displayDayFormatter.string(from: date)

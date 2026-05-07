@@ -57,6 +57,7 @@ struct AttendanceUserStatisticsView: View {
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 8) {
+                visualizationButton
                 if viewModel.canOpenUserManagement {
                     SmallButton(text: Texts.Attendance.manageUser.rawValue) {
                         viewModel.openUserManagement()
@@ -68,6 +69,29 @@ struct AttendanceUserStatisticsView: View {
                 }
             }
         }
+    }
+
+    @ViewBuilder
+    var visualizationButton: some View {
+        Button(action: {
+            viewModel.openVisualization()
+        }, label: {
+            Label(Texts.Attendance.visualization.rawValue, systemImage: "chart.xyaxis.line")
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(Color(.accent))
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .stroke(lineWidth: 1)
+                        .fill(Color(.accent))
+                        .shadow(color: Color(.shadow), radius: 5)
+                }
+        })
+        .disabled(viewModel.canOpenVisualization == false)
+        .opacity(viewModel.canOpenVisualization ? 1 : 0.4)
+        .accessibilityLabel(Texts.Attendance.visualization.rawValue)
+        .accessibilityIdentifier("attendance-visualization")
     }
     
     @ViewBuilder
